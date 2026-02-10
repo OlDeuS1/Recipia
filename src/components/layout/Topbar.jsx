@@ -1,63 +1,45 @@
+import AddIcon from "@mui/icons-material/Add";
+import SearchIcon from "@mui/icons-material/Search";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+
 function Topbar() {
   return (
-    <header className="topbar">
-      <div className="brand">Recipia</div>
-      <label className="search" aria-label="Search recipes">
-        <span className="search-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img">
-            <path
-              d="M20 20L16.65 16.65M18 11A7 7 0 1 1 4 11a7 7 0 0 1 14 0Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-        <input type="search" placeholder="Search for recipes" />
+    <header className="sticky top-0 z-50 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 items-center px-4 md:px-32 py-6 bg-gray-300">
+      <div className="flex items-center gap-3 font-display text-2xl font-bold">
+        Recipia
+      </div>
+      <label
+        className="flex items-center gap-3 bg-gray-100 rounded-full px-4 py-2 max-w-2xl w-full"
+        aria-label="Search recipes"
+      >
+        <SearchIcon fontSize="small" />
+        <input
+          type="search"
+          placeholder="Search for recipes"
+          className="border-none bg-transparent w-full text-base font-inherit text-gray-900 outline-none placeholder-gray-500"
+        />
       </label>
-      <div className="top-actions">
-        <button className="action-button">
-          <span className="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 5v14M5 12h14"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>
-          Add
+      <div className="flex items-center gap-3 justify-start md:justify-end flex-wrap">
+        <button className="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-4 py-2 text-sm font-semibold hover:bg-slate-800">
+          <AddIcon fontSize="small" />
+          เพิ่มสูตร
         </button>
-        <button className="icon-button" aria-label="Saved">
-          <svg viewBox="0 0 24 24" role="img">
-            <path
-              d="M7 4h10a2 2 0 0 1 2 2v14l-7-4-7 4V6a2 2 0 0 1 2-2Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinejoin="round"
-            />
-          </svg>
+        <button
+          className="inline-grid place-items-center w-12 h-12 rounded-full border-none bg-white text-gray-900 cursor-pointer hover:bg-gray-100"
+          aria-label="Saved"
+        >
+          <BookmarkIcon />
         </button>
-        <button className="icon-button" aria-label="Profile">
-          <svg viewBox="0 0 24 24" role="img">
-            <path
-              d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6 8a6 6 0 0 0-12 0"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+        <button
+          className="inline-grid place-items-center w-12 h-12 rounded-full border-none bg-white text-gray-900 cursor-pointer hover:bg-gray-100"
+          aria-label="Profile"
+        >
+          <AccountCircleIcon />
         </button>
       </div>
     </header>
-  )
+  );
 }
 
-export default Topbar
+export default Topbar;
