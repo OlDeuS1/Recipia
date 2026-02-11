@@ -22,15 +22,15 @@ const mediaBackgrounds = {
 
 function CatalogSection({ catalog }) {
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-10">
       <SectionHead
         title="เมนูยอดนิยม"
         kicker="เมนูที่ได้รับความนิยมในสัปดาห์นี้"
         action={
-          <button className="group inline-flex items-center gap-1 text-gray-900 font-semibold transition-colors duration-200 hover:text-gray-700">
-            ดูทั้งหมด
+          <button className="group inline-flex items-center gap-1.5 font-semibold text-gray-900 leading-none transition-colors duration-200 hover:text-gray-700">
+            <span className="flex items-center">ดูทั้งหมด</span>
             <ArrowRight
-              size={16}
+              size={18}
               strokeWidth={2.5}
               className="transition-transform duration-200 group-hover:translate-x-1"
             />
@@ -38,39 +38,41 @@ function CatalogSection({ catalog }) {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {catalog.map((item) => (
           <article
             key={item.title}
-            className="group bg-white rounded-3xl overflow-hidden border border-gray-200 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
           >
             {/* Image */}
-            <div
-              className="h-44 bg-gray-100 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-              style={{ background: mediaBackgrounds[item.media] }}
-              aria-hidden="true"
-            />
+            <div className="relative h-48 overflow-hidden">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style={{ background: mediaBackgrounds[item.media] }}
+              />
+            </div>
 
             {/* Content */}
             <div className="p-5 flex flex-col gap-3">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-900 text-xs font-semibold w-fit">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-medium w-fit">
                 {item.tag}
               </span>
 
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-gray-600 leading-none">
                 <Timer size={16} strokeWidth={2} />
-                <span className="pt-1">{item.time}</span>
-                <span className="pt-1">•</span>
+                <span>{item.time}</span>
+
+                <span className="opacity-40">•</span>
 
                 <Star
                   size={16}
                   strokeWidth={2}
                   className="text-yellow-500 fill-yellow-500"
                 />
-                <span className="pt-1">{item.rating}</span>
+                <span>{item.rating}</span>
               </div>
 
-              <h3 className="text-base font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
                 {item.title}
               </h3>
             </div>
