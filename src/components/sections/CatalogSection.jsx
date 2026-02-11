@@ -1,5 +1,5 @@
 import SectionHead from "../common/SectionHead";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { ArrowRight } from "lucide-react";
 
 const mediaBackgrounds = {
   "media-sixteen":
@@ -27,9 +27,13 @@ function CatalogSection({ catalog }) {
         title="เมนูยอดนิยม"
         kicker="เมนูที่ได้รับความนิยมในสัปดาห์นี้"
         action={
-          <button className="inline-flex items-center gap-1 bg-transparent border-none text-gray-900 font-semibold cursor-pointer hover:text-gray-700">
+          <button className="group inline-flex items-center gap-1 bg-transparent border-none text-gray-900 font-semibold cursor-pointer transition-colors duration-200 hover:text-gray-700">
             ดูทั้งหมด
-            <ArrowForwardIcon />
+            <ArrowRight
+              size={16}
+              strokeWidth={2.5}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
           </button>
         }
       />
