@@ -1,4 +1,5 @@
-import { Search, Plus, Bookmark, User } from "lucide-react";
+import { Plus, Bookmark, User } from "lucide-react";
+import SearchBar from "../common/SearchBar";
 
 function Topbar() {
   return (
@@ -8,15 +9,7 @@ function Topbar() {
         <div className="flex items-center gap-3 text-2xl font-bold flex-shrink-0">
           Recipia
         </div>
-
-        <label className="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 focus-within:ring-2 focus-within:ring-slate-900 rounded-full px-4 h-10 max-w-2xl w-full transition">
-          <Search size={18} className="text-gray-500" />
-          <input
-            type="search"
-            placeholder="Search for recipes"
-            className="bg-transparent w-full text-sm text-gray-800 outline-none border-none focus:outline-none focus:ring-0 placeholder-gray-400"
-          />
-        </label>
+        <SearchBar />
       </div>
 
       {/* RIGHT */}
