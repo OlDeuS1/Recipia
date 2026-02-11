@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 function CTASection() {
   return (
     <section className="bg-gray-50">
@@ -10,12 +11,20 @@ function CTASection() {
           พื้นที่สำหรับคนรักการทำอาหาร ที่รวบรวมสูตรเด็ดและเทคนิคใหม่ๆ
         </p>
 
-        <button className="bg-white text-slate-900 px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-200 shadow-md">
-          เพิ่มสูตรใหม่ →
+        <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-semibold leading-none transition-all duration-200 hover:bg-gray-100 active:scale-95">
+          <span className="flex items-center">เพิ่มสูตรใหม่</span>
+
+          <span className="flex items-center justify-center">
+            <ArrowRight
+              size={18}
+              strokeWidth={2.5}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </span>
         </button>
       </div>
     </section>
   );
 }
 
-export default CTASection
+export default CTASection;

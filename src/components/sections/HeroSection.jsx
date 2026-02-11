@@ -26,8 +26,8 @@ function HeroSection() {
           รวบรวมสูตรอาหารอร่อยจากทั่วโลก พร้อมคำแนะนำละเอียดทุกขั้นตอน
         </p>
         <div className="mt-3">
-          <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-semibold transition-all duration-200 hover:bg-gray-100 active:scale-95">
-            Explore now
+          <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-semibold leading-none transition-all duration-200 hover:bg-gray-100 active:scale-95">
+            เริ่มค้นหาสูตร
             <ArrowRight
               size={18}
               strokeWidth={2.5}
