@@ -1,5 +1,5 @@
 import SectionHead from "../common/SectionHead";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Timer, Star } from "lucide-react";
 
 const mediaBackgrounds = {
   "media-sixteen":
@@ -27,7 +27,7 @@ function CatalogSection({ catalog }) {
         title="เมนูยอดนิยม"
         kicker="เมนูที่ได้รับความนิยมในสัปดาห์นี้"
         action={
-          <button className="group inline-flex items-center gap-1 bg-transparent border-none text-gray-900 font-semibold cursor-pointer transition-colors duration-200 hover:text-gray-700">
+          <button className="group inline-flex items-center gap-1 text-gray-900 font-semibold transition-colors duration-200 hover:text-gray-700">
             ดูทั้งหมด
             <ArrowRight
               size={16}
@@ -37,27 +37,42 @@ function CatalogSection({ catalog }) {
           </button>
         }
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
         {catalog.map((item) => (
           <article
             key={item.title}
-            className="bg-white rounded-3xl overflow-hidden border border-gray-200 flex flex-col"
+            className="group bg-white rounded-3xl overflow-hidden border border-gray-200 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
+            {/* Image */}
             <div
-              className="h-40 bg-gray-100 bg-cover bg-center"
+              className="h-44 bg-gray-100 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
               style={{ background: mediaBackgrounds[item.media] }}
               aria-hidden="true"
             />
-            <div className="p-4 flex flex-col gap-2">
-              <span className="inline-flex items-center justify-center px-3 py-0.5 rounded-full bg-gray-100 text-gray-900 text-xs font-semibold w-fit">
+
+            {/* Content */}
+            <div className="p-5 flex flex-col gap-3">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-900 text-xs font-semibold w-fit">
                 {item.tag}
               </span>
-              <div className="flex gap-2 text-sm text-gray-900 opacity-75">
-                <span>{item.time}</span>
-                <span>•</span>
-                <span>{item.rating}</span>
+
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Timer size={16} strokeWidth={2} />
+                <span className="pt-1">{item.time}</span>
+                <span className="pt-1">•</span>
+
+                <Star
+                  size={16}
+                  strokeWidth={2}
+                  className="text-yellow-500 fill-yellow-500"
+                />
+                <span className="pt-1">{item.rating}</span>
               </div>
-              <h3 className="m-0 text-base font-semibold">{item.title}</h3>
+
+              <h3 className="text-base font-semibold text-gray-900">
+                {item.title}
+              </h3>
             </div>
           </article>
         ))}
