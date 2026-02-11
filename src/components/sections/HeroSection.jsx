@@ -3,9 +3,7 @@ import { ArrowRight } from "lucide-react";
 function HeroSection() {
   return (
     <section
-      className="relative rounded-2xl overflow-hidden 
-  h-[500px] md:h-[600px] 
-  grid items-end"
+      className="relative rounded-2xl overflow-hidden h-[500px] md:h-[600px] grid items-end"
       aria-label="Hero"
     >
       {/* Background Image */}
