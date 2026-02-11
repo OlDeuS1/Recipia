@@ -1,19 +1,19 @@
 function CTASection() {
   return (
-    <section className="bg-gray-900 text-white rounded-3xl px-6 md:px-16 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div>
-        <p className="text-white/65 text-sm mb-1">Join the kitchen</p>
-        <h2 className="m-0 mb-2 font-display text-3xl md:text-4xl">
-          Get weekly menus, tips, and chef secrets.
+    <section className="bg-gray-50">
+      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl py-16 px-6 text-center shadow-xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          มาเป็นส่วนหนึ่งของ Recipia
         </h2>
-        <p className="m-0 text-white/75">
-          Subscribe to receive curated recipes and seasonal cooking guides
-          straight to your inbox.
+
+        <p className="text-gray-300 mb-8 text-base md:text-lg">
+          พื้นที่สำหรับคนรักการทำอาหาร ที่รวบรวมสูตรเด็ดและเทคนิคใหม่ๆ
         </p>
+
+        <button className="bg-white text-slate-900 px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-200 shadow-md">
+          เพิ่มสูตรใหม่ →
+        </button>
       </div>
-      <button className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-5 py-2 rounded-full font-semibold cursor-pointer transition-colors hover:bg-gray-100">
-        Subscribe
-      </button>
     </section>
   );
 }
