@@ -1,5 +1,6 @@
 import { Plus, Bookmark, User } from "lucide-react";
 import SearchBar from "../common/SearchBar";
+import { Link } from "react-router-dom";
 
 function Topbar() {
   return (
@@ -7,7 +8,7 @@ function Topbar() {
       {/* LEFT */}
       <div className="flex items-center gap-8 flex-1">
         <div className="flex items-center gap-3 text-2xl font-bold flex-shrink-0">
-          Recipia
+          <Link to="/">Recipia</Link>
         </div>
         <SearchBar />
       </div>
