@@ -3,7 +3,7 @@ import CategorySection from "../components/sections/CategorySection";
 import CatalogSection from "../components/sections/CatalogSection";
 import CTASection from "../components/sections/CTASection";
 
-function Home() {
+export default function Home() {
   const collections = [
     { title: "Plant Forward", media: "media-ten" },
     {
@@ -76,13 +76,11 @@ function Home() {
   ];
 
   return (
-    <>
+    <main className="flex flex-col gap-16">
       <HeroSection />
       <CategorySection collections={collections} />
       <CatalogSection catalog={catalog} />
       <CTASection />
-    </>
+    </main>
   );
 }
-
-export default Home;
