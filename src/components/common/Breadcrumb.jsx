@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ExploreBreadcrumb() {
+export default function Breadcrumb() {
   return (
     <div className="text-sm text-gray-500 flex items-center gap-2">
       <Link to="/">หน้าแรก</Link>

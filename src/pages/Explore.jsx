@@ -1,4 +1,4 @@
-import ExploreBreadcrumb from "../components/common/ExploreBreadcrumb";
+import Breadcrumb from "../components/common/Breadcrumb";
 import ExploreFilter from "../components/common/ExploreFilter";
 import RecipeMasonry from "../components/common/RecipeMasonry";
 
@@ -77,7 +77,7 @@ function Explore() {
   return (
     <>
       <main className="flex flex-col gap-10">
-        <ExploreBreadcrumb />
+        <Breadcrumb />
         <ExploreFilter />
         <RecipeMasonry
           recipes={recipes}
