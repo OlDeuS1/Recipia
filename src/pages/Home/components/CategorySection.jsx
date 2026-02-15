@@ -1,5 +1,5 @@
-import SectionHead from "../common/SectionHead"
-import CategoryCard from "../common/CategoryCard";
+import SectionHead from "./SectionHead";
+import CategoryCard from "./CategoryCard";
 
 const mediaBackgrounds = {
   "media-ten":

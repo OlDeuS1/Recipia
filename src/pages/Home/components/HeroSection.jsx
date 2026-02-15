@@ -7,17 +7,14 @@ function HeroSection() {
       className="relative rounded-2xl overflow-hidden h-[500px] md:h-[600px] grid items-end"
       aria-label="Hero"
     >
-      {/* Background Image */}
       <img
-        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // 🔥 เปลี่ยน path ตามรูปของคุณ
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Delicious food"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
       <div className="relative z-10 text-white px-6 md:px-12 py-20 md:py-24 max-w-3xl flex flex-col gap-6">
         <h1 className="font-display text-4xl md:text-6xl leading-tight m-0">
           ค้นพบสูตรอาหารใหม่ๆทุกวันกับ Recipia

@@ -1,7 +1,7 @@
-import HeroSection from "../components/sections/HeroSection";
-import CategorySection from "../components/sections/CategorySection";
-import CatalogSection from "../components/sections/CatalogSection";
-import CTASection from "../components/sections/CTASection";
+import HeroSection from "./components/HeroSection";
+import CategorySection from "./components/CategorySection";
+import CatalogSection from "./components/CatalogSection";
+import CTASection from "./components/CTASection";
 
 export default function Home() {
   const collections = [

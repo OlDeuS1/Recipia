@@ -3,7 +3,6 @@ import { Timer, Users } from "lucide-react";
 function ExploreRecipeCard({ item }) {
   return (
     <article className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-      {/* Image */}
       <div className="overflow-hidden">
         <img
           src={item.image}
@@ -12,7 +11,6 @@ function ExploreRecipeCard({ item }) {
         />
       </div>
 
-      {/* Content */}
       <div className="p-4 flex flex-col gap-3">
         <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-medium w-fit">
           {item.tag}

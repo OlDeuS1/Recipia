@@ -5,13 +5,10 @@ export default function ExploreFilter() {
     const [sort, setSort] = useState("ล่าสุด");
     const [open, setOpen] = useState(false);
 
-    const sortOptions = ["ล่าสุด", "ยอดนิยม", "คะแนนสูงสุด"];
-     
+    const sortOptions = ["ล่าสุด", "ยอดนิยม", "คะแนนสูงสุด"];    
   return (
     <div className="flex flex-wrap items-center justify-between gap-4">
-      {/* LEFT SIDE */}
       <div className="flex flex-wrap items-center gap-3 flex-1">
-        {/* Filter Pills */}
         <button className="px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium">
           อาหารไทย
         </button>
@@ -24,7 +21,6 @@ export default function ExploreFilter() {
           1–2 คน
         </button>
 
-        {/* Search */}
         <div className="relative w-72">
           <input
             type="text"
@@ -37,13 +33,11 @@ export default function ExploreFilter() {
           />
         </div>
 
-        {/* Clear */}
         <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition">
           ล้างทั้งหมด
         </button>
       </div>
 
-      {/* RIGHT SIDE - Sort */}
       <div className="relative">
         <button
           onClick={() => setOpen(!open)}
@@ -73,27 +67,3 @@ export default function ExploreFilter() {
     </div>
   );
 }
-
-// {
-//   /* Category */
-// }
-// <button className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition">
-//   อาหารไทย
-//   <ChevronDown size={16} />
-// </button>;
-
-// {
-//   /* Time */
-// }
-// <button className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition">
-//   30 นาที
-//   <ChevronDown size={16} />
-// </button>;
-
-// {
-//   /* Serving */
-// }
-// <button className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition">
-//   1–2 คน
-//   <ChevronDown size={16} />
-// </button>;

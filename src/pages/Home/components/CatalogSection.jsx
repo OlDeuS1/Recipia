@@ -1,5 +1,5 @@
-import SectionHead from "../common/SectionHead";
-import RecipeCard from "../common/RecipeCard";
+import SectionHead from "./SectionHead";
+import RecipeCard from "./RecipeCard";
 import { ArrowRight } from "lucide-react";
 
 const mediaBackgrounds = {

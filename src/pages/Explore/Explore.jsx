@@ -1,6 +1,6 @@
-import Breadcrumb from "../components/common/Breadcrumb";
-import ExploreFilter from "../components/common/ExploreFilter";
-import RecipeMasonry from "../components/common/RecipeMasonry";
+import Breadcrumb from "../../components/common/Breadcrumb";
+import ExploreFilter from "./components/ExploreFilter";
+import RecipeMasonry from "./components/RecipeMasonry";
 
 const recipes = [
   {
