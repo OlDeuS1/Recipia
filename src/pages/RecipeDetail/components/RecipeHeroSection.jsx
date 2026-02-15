@@ -3,11 +3,9 @@ import RecipeHeader from "./RecipeHeader";
 
 export default function RecipeHeroSection() {
   return (
-    <section className="recipe-hero">
+    <section>
       <RecipeImage />
-      <div className="container mx-auto px-4">
-        <RecipeHeader />
-      </div>
+      <RecipeHeader />
     </section>
   );
 }

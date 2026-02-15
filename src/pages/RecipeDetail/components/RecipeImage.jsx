@@ -4,7 +4,7 @@ export default function RecipeImage() {
       <img
         src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d"
         alt="ผัดไทย"
-        className="w-full max-w-3xl rounded-2xl shadow-lg object-cover"
+        className="w-full max-w-4xl rounded-3xl shadow-xl object-cover"
       />
     </div>
   );
