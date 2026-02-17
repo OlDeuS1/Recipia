@@ -16,62 +16,66 @@ export default function Home() {
     { title: "Cozy Bowls", media: "media-fifteen" },
   ];
 
-  const catalog = [
+  const recipes = [
     {
-      title: "Seared Tuna Tataki",
-      time: "25 min",
-      rating: "4.8",
-      tag: "Chef pick",
-      media: "media-sixteen",
+      title: "ผัดกะเพราหมูสับ",
+      image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",
+      tag: "อาหารไทย",
+      time: "35 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Citrus Herb Salad",
-      time: "15 min",
-      rating: "4.6",
-      tag: "Fresh",
-      media: "media-seventeen",
+      title: "ผัดไทยกุ้งสด",
+      image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",
+      tag: "เส้น",
+      time: "30 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Saffron Risotto",
-      time: "35 min",
-      rating: "4.7",
-      tag: "Comfort",
-      media: "media-eighteen",
+      title: "ผัดกะเพราหมูสับ",
+      image:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tag: "อาหารไทย",
+      time: "35 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Lemongrass Broth",
-      time: "30 min",
-      rating: "4.9",
-      tag: "Signature",
-      media: "media-nineteen",
+      title: "ผัดไทยกุ้งสด",
+      image:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tag: "เส้น",
+      time: "30 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Hokkaido Milk Bread",
-      time: "55 min",
-      rating: "4.8",
-      tag: "Baked",
-      media: "media-twenty",
+      title: "ผัดกะเพราหมูสับ",
+      image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",
+      tag: "อาหารไทย",
+      time: "35 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Chili Citrus Shrimp",
-      time: "22 min",
-      rating: "4.7",
-      tag: "Popular",
-      media: "media-twentyone",
+      title: "ผัดไทยกุ้งสด",
+      image:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tag: "เส้น",
+      time: "30 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Lavender Honey Cake",
-      time: "45 min",
-      rating: "4.9",
-      tag: "Dessert",
-      media: "media-twentytwo",
+      title: "ผัดไทยกุ้งสด",
+      image:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tag: "เส้น",
+      time: "30 นาที",
+      serving: "2 ที่",
     },
     {
-      title: "Golden Pumpkin Curry",
-      time: "40 min",
-      rating: "4.7",
-      tag: "Seasonal",
-      media: "media-twentythree",
+      title: "ผัดกะเพราหมูสับ",
+      image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",
+      tag: "อาหารไทย",
+      time: "35 นาที",
+      serving: "2 ที่",
     },
   ];
 
@@ -79,7 +83,7 @@ export default function Home() {
     <main className="flex flex-col gap-16">
       <HeroSection />
       <CategorySection collections={collections} />
-      <CatalogSection catalog={catalog} />
+      <CatalogSection catalog={recipes} />
       <CTASection />
     </main>
   );
