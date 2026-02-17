@@ -15,10 +15,12 @@ function Topbar() {
 
       {/* RIGHT */}
       <div className="flex items-center gap-4 flex-shrink-0">
-        <button className="flex items-center gap-2 bg-slate-900 text-white px-4 h-10 rounded-full hover:bg-slate-800 transition-all duration-200 shadow-md active:scale-95">
-          <Plus size={18} strokeWidth={2.5} />
-          <span className="text-sm font-semibold">สร้างสูตร</span>
-        </button>
+        <Link to="/create">
+          <button className="flex items-center gap-2 bg-slate-900 text-white px-4 h-10 rounded-full hover:bg-slate-800 transition-all duration-200 shadow-md active:scale-95">
+            <Plus size={18} strokeWidth={2.5} />
+            <span className="text-sm font-semibold">สร้างสูตร</span>
+          </button>
+        </Link>
         <Link to="/bookmark">
           <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-105">
             <Bookmark size={20} strokeWidth={2} />

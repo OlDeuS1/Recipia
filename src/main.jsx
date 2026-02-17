@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home.jsx";
 import Explore from "./pages/Explore/Explore.jsx";
 import RecipeDetail from "./pages/RecipeDetail/RecipeDetail.jsx";
 import Bookmark from "./pages/Bookmark/Bookmark.jsx";
+import CreateRecipe from "./pages/CreateRecipe/CreateRecipe.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="explore" element={<Explore />} />
           <Route path="id" element={<RecipeDetail />} />
           <Route path="bookmark" element={<Bookmark />} />
+          <Route path="create" element={<CreateRecipe />} />
         </Route>
       </Routes>
     </BrowserRouter>
