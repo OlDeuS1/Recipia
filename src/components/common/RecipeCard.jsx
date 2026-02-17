@@ -11,7 +11,7 @@ function RecipeCard({ item, fixed = false, footer }) {
         ${fixed ? "flex flex-col" : ""}
       `}
     >
-      <Link to={`/recipe/${item.id}`} className="flex flex-col flex-1">
+      <Link to={`/id`} className="flex flex-col flex-1">
         {/* Image */}
         <div className={fixed ? "h-56 overflow-hidden" : "overflow-hidden"}>
           <img
