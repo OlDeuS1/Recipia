@@ -8,7 +8,7 @@ function RecipeCard({ item, fixed = false }) {
 
   return (
     <article className={articleClasses}>
-      <Link>
+      <Link to="/id">
         <div className={fixed ? "overflow-hidden h-44" : "overflow-hidden"}>
           <img
             src={item.image}
