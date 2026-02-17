@@ -1,11 +1,10 @@
 import UploadBox from "./components/UploadBox";
-import FormSection from "./components/FormSection";
-import TextInput from "./components/TextInput";
-import TextArea from "./components/TextArea";
 import IngredientSection from "./components/IngredientSection";
 import StepSection from "./components/StepSection";
 import Breadcrumb from "../../components/common/Breadcrumb";
 import SectionHead from "../../components/common/SectionHead";
+import NutritionSection from "./components/NutritionSection";
+import BasicSection from "./components/BasicSection";
 
 export default function CreateRecipe() {
   return (
@@ -20,30 +19,13 @@ export default function CreateRecipe() {
       <div className="max-w-4xl mx-auto px-6 py-14 space-y-10">
         <UploadBox />
 
-        {/* Basic Info */}
-        <FormSection title="ข้อมูลพื้นฐาน">
-          <TextInput placeholder="ชื่อสูตรอาหาร" />
-          <TextArea placeholder="คำอธิบาย" rows={4} />
-
-          <div className="grid grid-cols-2 gap-4">
-            <TextInput type="number" placeholder="เวลาเตรียม (นาที)" />
-            <TextInput type="number" placeholder="จำนวนเสิร์ฟ" />
-          </div>
-        </FormSection>
+        <BasicSection />
 
         <IngredientSection />
 
         <StepSection />
 
-        {/* Nutrition */}
-        <FormSection title="ข้อมูลโภชนาการ">
-          <div className="grid grid-cols-2 gap-4">
-            <TextInput type="number" placeholder="พลังงาน (kcal)" />
-            <TextInput type="number" placeholder="โปรตีน (g)" />
-            <TextInput type="number" placeholder="ไขมัน (g)" />
-            <TextInput type="number" placeholder="คาร์บ (g)" />
-          </div>
-        </FormSection>
+        <NutritionSection />
 
         {/* Buttons */}
         <div className="flex gap-4 pt-4">
