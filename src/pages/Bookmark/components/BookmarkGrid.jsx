@@ -1,6 +1,5 @@
-import Breadcrumb from "../../components/common/Breadcrumb";
-import ExploreFilter from "./components/ExploreFilter";
-import RecipeMasonry from "./components/RecipeMasonry";
+import RecipeCard from "../../../components/common/RecipeCard";
+import { Trash2 } from "lucide-react";
 
 const recipes = [
   {
@@ -66,27 +65,28 @@ const recipes = [
   },
 ];
 
-function Explore() {
-  const breakpointColumnsObj = {
-    default: 4,
-    1280: 4,
-    1024: 3,
-    768: 2,
-    640: 1,
-  };
+export default function BookmarkGrid() {
 
   return (
-    <>
-      <main className="flex flex-col gap-10">
-        <Breadcrumb />
-        <ExploreFilter />
-        <RecipeMasonry
-          recipes={recipes}
-          breakpointCols={breakpointColumnsObj}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {recipes.map((item) => (
+        <RecipeCard
+          key={item.title}
+          item={item}
+          fixed
+          footer={
+            <button
+              className="w-full flex items-center justify-center gap-2
+                 border border-gray-200 rounded-xl py-2
+                 text-sm text-gray-700 hover:bg-gray-100 transition"
+              onClick={() => handleRemove(item.id)}
+            >
+              <Trash2 size={16} />
+              ลบออกจากที่บันทึก
+            </button>
+          }
         />
-      </main>
-    </>
+      ))}
+    </div>
   );
 }
-
-export default Explore;

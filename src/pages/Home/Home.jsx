@@ -19,7 +19,8 @@ export default function Home() {
   const recipes = [
     {
       title: "ผัดกะเพราหมูสับ",
-      image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",
+      image:
+        "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tag: "อาหารไทย",
       time: "35 นาที",
       serving: "2 ที่",
@@ -65,7 +66,7 @@ export default function Home() {
     {
       title: "ผัดไทยกุ้งสด",
       image:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tag: "เส้น",
       time: "30 นาที",
       serving: "2 ที่",

@@ -1,4 +1,4 @@
-import SectionHead from "./SectionHead";
+import SectionHead from "../../../components/common/SectionHead";
 import CategoryCard from "./CategoryCard";
 
 const mediaBackgrounds = {
@@ -34,5 +34,4 @@ function CategorySection({ collections }) {
   );
 }
 
-
-export default CategorySection
+export default CategorySection;

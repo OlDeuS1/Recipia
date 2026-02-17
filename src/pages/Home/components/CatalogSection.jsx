@@ -1,4 +1,4 @@
-import SectionHead from "./SectionHead";
+import SectionHead from "../../../components/common/SectionHead";
 import RecipeCard from "../../../components/common/RecipeCard";
 import { ArrowRight } from "lucide-react";
 

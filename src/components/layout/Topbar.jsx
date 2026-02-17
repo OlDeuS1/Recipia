@@ -19,9 +19,11 @@ function Topbar() {
           <Plus size={18} strokeWidth={2.5} />
           <span className="text-sm font-semibold">สร้างสูตร</span>
         </button>
-        <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-105">
-          <Bookmark size={20} strokeWidth={2} />
-        </button>
+        <Link to="/bookmark">
+          <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-105">
+            <Bookmark size={20} strokeWidth={2} />
+          </button>
+        </Link>
         <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all duration-200 hover:scale-105">
           <User size={20} strokeWidth={2} />
         </button>
