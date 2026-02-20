@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { getMeals } from "../../services/mealService";
 import HeroSection from "./components/HeroSection";
 import CategorySection from "./components/CategorySection";
 import CatalogSection from "./components/CatalogSection";
 import CTASection from "./components/CTASection";
-import { fetchRandomMeals } from "../../services/mealService";
 
 export default function Home() {
   const collections = [
@@ -19,23 +19,28 @@ export default function Home() {
   ];
 
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let mounted = true;
-    (async () => {
-      const data = await fetchRandomMeals(8);
-      if (mounted && Array.isArray(data)) setRecipes(data);
-    })();
-    return () => {
-      mounted = false;
-    };
+    async function load() {
+      setLoading(true);
+      const data = await getMeals();
+      setRecipes(data);
+      setLoading(false);
+    }
+
+    load();
   }, []);
+
+  const popularRecipes = [...recipes]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 8);
 
   return (
     <main className="flex flex-col gap-16">
       <HeroSection />
       <CategorySection collections={collections} />
-      <CatalogSection catalog={recipes} />
+      <CatalogSection catalog={popularRecipes} />
       <CTASection />
     </main>
   );

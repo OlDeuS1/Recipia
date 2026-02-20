@@ -1,3 +1,7 @@
+function generateNumberFromId(id, min, max) {
+  const seed = parseInt(id.slice(-4)); // เอาเลขท้าย ๆ
+  return (seed % (max - min + 1)) + min;
+}
 export function transformMeal(meal) {
   const ingredients = [];
 
@@ -14,27 +18,29 @@ export function transformMeal(meal) {
     ? meal.strInstructions.split(/\r?\n/).filter(Boolean)
     : [];
 
+  const rating = generateNumberFromId(meal.idMeal, 3, 5);
+  const time = generateNumberFromId(meal.idMeal, 20, 60);
+  const serving = generateNumberFromId(meal.idMeal, 1, 4);
+
   return {
     id: meal.idMeal,
     title: meal.strMeal,
     image: meal.strMealThumb,
     category: meal.strCategory,
     area: meal.strArea,
-    description: meal.strInstructions?.slice(0, 120) + "...",
 
-    time: Math.floor(Math.random() * 40) + 20,
-    servings: Math.floor(Math.random() * 3) + 1,
+    rating,
+    time,
+    serving,
 
     ingredients,
     steps,
 
     nutrition: {
-      calories: Math.floor(Math.random() * 400) + 300,
-      protein: Math.floor(Math.random() * 30) + 10,
-      fat: Math.floor(Math.random() * 20) + 10,
-      carb: Math.floor(Math.random() * 50) + 30,
+      calories: generateNumberFromId(meal.idMeal, 300, 700),
+      protein: generateNumberFromId(meal.idMeal, 15, 50),
+      fat: generateNumberFromId(meal.idMeal, 10, 30),
+      carb: generateNumberFromId(meal.idMeal, 30, 80),
     },
-
-    source: "TheMealDB",
   };
 }
