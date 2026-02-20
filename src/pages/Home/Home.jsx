@@ -1,31 +1,26 @@
 import { useEffect, useState } from "react";
-import { getMeals } from "../../services/mealService";
+import { getMeals, getCategories } from "../../services/mealService";
 import HeroSection from "./components/HeroSection";
 import CategorySection from "./components/CategorySection";
 import CatalogSection from "./components/CatalogSection";
 import CTASection from "./components/CTASection";
 
 export default function Home() {
-  const collections = [
-    { title: "Plant Forward", media: "media-ten" },
-    {
-      title: "Weeknight Warmers",
-      media: "media-eleven",
-    },
-    { title: "Sweet Escape", media: "media-twelve" },
-    { title: "Seafood Studio", media: "media-thirteen" },
-    { title: "Breakfast Rituals", media: "media-fourteen" },
-    { title: "Cozy Bowls", media: "media-fifteen" },
-  ];
-
   const [recipes, setRecipes] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
       setLoading(true);
-      const data = await getMeals();
-      setRecipes(data);
+
+      const [mealData, categoryData] = await Promise.all([
+        getMeals(),
+        getCategories(),
+      ]);
+
+      setRecipes(mealData);
+      setCategories(categoryData);
       setLoading(false);
     }
 
@@ -39,8 +34,8 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-16">
       <HeroSection />
-      <CategorySection collections={collections} />
-      <CatalogSection catalog={popularRecipes} />
+      <CategorySection categories={categories} />
+      <CatalogSection recipes={popularRecipes} />
       <CTASection />
     </main>
   );

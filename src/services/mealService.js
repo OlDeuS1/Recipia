@@ -39,3 +39,19 @@ export async function getMeals() {
     return [];
   }
 }
+
+export async function getCategories() {
+  const res = await fetch(`${BASE_URL}/categories.php`);
+  const data = await res.json();
+
+  if (!data.categories) return [];
+
+  // 🔥 กรองเอาเฉพาะ 6 หมวดที่เราเลือก
+  return data.categories
+    .filter((cat) => HOME_CATEGORIES.includes(cat.strCategory))
+    .map((cat) => ({
+      id: cat.idCategory,
+      name: cat.strCategory,
+      image: cat.strCategoryThumb,
+    }));
+}

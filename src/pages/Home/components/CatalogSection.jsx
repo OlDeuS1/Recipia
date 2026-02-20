@@ -2,7 +2,7 @@ import SectionHead from "../../../components/common/SectionHead";
 import RecipeCard from "../../../components/common/RecipeCard";
 import { ArrowRight } from "lucide-react";
 
-function CatalogSection({ catalog }) {
+function CatalogSection({ recipes }) {
   return (
     <section className="flex flex-col gap-10">
       <SectionHead
@@ -21,7 +21,7 @@ function CatalogSection({ catalog }) {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        {catalog.map((item) => (
+        {recipes.map((item) => (
           <RecipeCard key={item.title} item={item} fixed />
         ))}
       </div>
