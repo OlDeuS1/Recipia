@@ -30,7 +30,7 @@ function RecipeCard({ item, fixed = false, footer }) {
                            bg-gray-100 text-gray-700 
                            text-xs font-medium w-fit"
           >
-            {item.tag}
+            {item.category}
           </span>
 
           <div className="flex items-center gap-2 text-sm text-gray-600">
