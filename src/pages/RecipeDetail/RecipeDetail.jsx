@@ -1,9 +1,26 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Bookmark } from "lucide-react";
+import { getMealById } from "../../services/mealService";
+
 import Breadcrumb from "../../components/common/Breadcrumb";
 import RecipeHeroSection from "./components/RecipeHeroSection";
 import RecipeContentSection from "./components/RecipeContentSection";
 
 export default function RecipeDetail() {
+  const { id } = useParams();
+  const [recipe, setRecipe] = useState(null);
+
+  useEffect(() => {
+    async function load() {
+      const data = await getMealById(id);
+      setRecipe(data);
+    }
+    load();
+  }, [id]);
+
+  if (!recipe) return <div className="p-10">Loading...</div>;
+
   return (
     <div className="container mx-auto px-4">
       <div className="flex flex-wrap justify-between items-center mb-12">
@@ -14,8 +31,8 @@ export default function RecipeDetail() {
         </button>
       </div>
 
-      <RecipeHeroSection />
-      <RecipeContentSection />
+      <RecipeHeroSection recipe={recipe} />
+      <RecipeContentSection recipe={recipe} />
     </div>
   );
 }

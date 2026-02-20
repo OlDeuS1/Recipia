@@ -55,3 +55,12 @@ export async function getCategories() {
       image: cat.strCategoryThumb,
     }));
 }
+
+export async function getMealById(id) {
+  const res = await fetch(`${BASE_URL}/lookup.php?i=${id}`);
+
+  const data = await res.json();
+  if (!data.meals) return null;
+
+  return transformMeal(data.meals[0]);
+}

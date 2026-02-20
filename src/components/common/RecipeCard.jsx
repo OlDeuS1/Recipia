@@ -11,7 +11,7 @@ function RecipeCard({ item, fixed = false, footer }) {
         ${fixed ? "flex flex-col" : ""}
       `}
     >
-      <Link to={`/id`} className="flex flex-col flex-1">
+      <Link to={`/recipe/${item.id}`} className="flex flex-col flex-1">
         {/* Image */}
         <div className={fixed ? "h-56 overflow-hidden" : "overflow-hidden"}>
           <img
@@ -35,10 +35,10 @@ function RecipeCard({ item, fixed = false, footer }) {
 
           <div className="flex items-center gap-2 text-sm text-gray-600">
             <Timer size={16} />
-            <span>{item.time}</span>
+            <span>{item.time} นาที</span>
             <span className="opacity-40">•</span>
             <Users size={16} />
-            <span>{item.serving}</span>
+            <span>{item.serving} ที่</span>
           </div>
 
           <h3 className="text-base font-semibold text-gray-900">
@@ -47,7 +47,6 @@ function RecipeCard({ item, fixed = false, footer }) {
         </div>
       </Link>
 
-      {/* Footer */}
       {footer && <div className="px-5 pb-5">{footer}</div>}
     </article>
   );

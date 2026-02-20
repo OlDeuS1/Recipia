@@ -1,11 +1,11 @@
 import RecipeIngredient from "./RecipeIngredient";
 import RecipeNutrition from "./RecipeNutrition";
 
-export default function RecipeSidebar() {
+export default function RecipeSidebar({ recipe }) {
   return (
     <div className="space-y-8 md:sticky md:top-28">
-      <RecipeNutrition/>
-      <RecipeIngredient/>
+      <RecipeNutrition recipe={recipe} />
+      <RecipeIngredient recipe={recipe} />
     </div>
   );
 }
