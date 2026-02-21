@@ -2,7 +2,7 @@ import Breadcrumb from "../../components/common/Breadcrumb";
 import ExploreFilter from "./components/ExploreFilter";
 import RecipeMasonry from "./components/RecipeMasonry";
 import { useEffect, useState } from "react";
-import { getMeals, getCategories } from "../../services/mealService";
+import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 
 function Explore() {
   const breakpointColumnsObj = {
@@ -20,9 +20,14 @@ function Explore() {
     async function load() {
       setLoading(true);
 
-      const [mealData] = await Promise.all([getMeals()]);
+      const [mealData, categoryData] = await Promise.all([
+        fetchRecipes(),
+        fetchCategories(),
+      ]);
 
       setRecipes(mealData);
+      // if needed, categories can be used by ExploreFilter later
+      // setCategories(categoryData)
       setLoading(false);
     }
 

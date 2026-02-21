@@ -22,7 +22,7 @@ function CatalogSection({ recipes }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {recipes.map((item) => (
-          <RecipeCard key={item.title} item={item} fixed />
+          <RecipeCard key={item.id} item={item} fixed />
         ))}
       </div>
     </section>

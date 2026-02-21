@@ -1,4 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { fetchRecipeById } from "../../services/recipeService";
 
 export default function Breadcrumb() {
   const location = useLocation();
@@ -10,6 +12,36 @@ export default function Breadcrumb() {
     recipe: "สูตรอาหาร",
   };
 
+  const [namesById, setNamesById] = useState({});
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadNames() {
+      const ids = segments.filter((s) => !isNaN(s));
+      const next = {};
+
+      await Promise.all(
+        ids.map(async (id) => {
+          try {
+            const m = await fetchRecipeById(id);
+            if (m && m.name) next[id] = m.name;
+          } catch (e) {
+            // ignore
+          }
+        }),
+      );
+
+      if (mounted) setNamesById((p) => ({ ...p, ...next }));
+    }
+
+    if (segments.length) loadNames();
+
+    return () => {
+      mounted = false;
+    };
+  }, [location.pathname]);
+
   const crumbs = [
     { label: "หน้าแรก", to: "/" },
     ...segments.map((seg, idx) => {
@@ -19,7 +51,7 @@ export default function Breadcrumb() {
 
       return {
         label: isId
-          ? "รายละเอียดสูตร"
+          ? namesById[seg] || "รายละเอียดสูตร"
           : labelMap[seg] || decodeURIComponent(seg),
         to,
       };

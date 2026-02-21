@@ -16,7 +16,7 @@ function RecipeCard({ item, fixed = false, footer }) {
         <div className={fixed ? "h-56 overflow-hidden" : "overflow-hidden"}>
           <img
             src={item.image}
-            alt={item.title}
+            alt={item.name}
             className="w-full h-full object-cover 
                        transition-transform duration-700 
                        group-hover:scale-110"
@@ -41,9 +41,7 @@ function RecipeCard({ item, fixed = false, footer }) {
             <span>{item.serving} ที่</span>
           </div>
 
-          <h3 className="text-base font-semibold text-gray-900">
-            {item.title}
-          </h3>
+          <h3 className="text-base font-semibold text-gray-900">{item.name}</h3>
         </div>
       </Link>
 

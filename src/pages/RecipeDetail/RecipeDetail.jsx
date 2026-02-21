@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Bookmark } from "lucide-react";
-import { getMealById } from "../../services/mealService";
+import { fetchRecipeById } from "../../services/recipeService";
 
 import Breadcrumb from "../../components/common/Breadcrumb";
 import RecipeHeroSection from "./components/RecipeHeroSection";
@@ -13,7 +13,7 @@ export default function RecipeDetail() {
 
   useEffect(() => {
     async function load() {
-      const data = await getMealById(id);
+      const data = await fetchRecipeById(id);
       setRecipe(data);
     }
     load();

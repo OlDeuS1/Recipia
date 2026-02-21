@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMeals, getCategories } from "../../services/mealService";
+import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 import HeroSection from "./components/HeroSection";
 import CategorySection from "./components/CategorySection";
 import CatalogSection from "./components/CatalogSection";
@@ -15,8 +15,8 @@ export default function Home() {
       setLoading(true);
 
       const [mealData, categoryData] = await Promise.all([
-        getMeals(),
-        getCategories(),
+        fetchRecipes(),
+        fetchCategories(),
       ]);
 
       setRecipes(mealData);

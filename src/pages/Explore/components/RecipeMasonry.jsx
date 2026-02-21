@@ -9,7 +9,7 @@ export default function RecipeMasonry({ recipes, breakpointCols }) {
       columnClassName="flex flex-col gap-6"
     >
       {recipes.map((item) => (
-        <RecipeCard key={item.title} item={item} />
+        <RecipeCard key={item.id} item={item} />
       ))}
     </Masonry>
   );

@@ -8,7 +8,7 @@ export default function RecipeHeader({ recipe }) {
       </span>
 
       <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-4 leading-tight">
-        {recipe.title}
+        {recipe.name}
       </h1>
 
       <div className="flex items-center gap-3 mb-6">
