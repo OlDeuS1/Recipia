@@ -4,9 +4,7 @@ export default function RecipeIngredient({ recipe }) {
       <h2 className="text-xl font-semibold text-gray-900 mb-6">วัตถุดิบ</h2>
       <ul className="space-y-3 text-base text-gray-700 leading-relaxed list-disc pl-5">
         {recipe.ingredients.map((item, index) => (
-          <li key={index}>
-            {item.name} {item.measure}
-          </li>
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </div>
