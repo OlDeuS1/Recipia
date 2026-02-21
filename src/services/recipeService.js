@@ -11,8 +11,13 @@ export function fetchRecipeById(id) {
 }
 
 export function fetchCategories() {
-  const cats = Array.from(new Set(recipes.map((r) => r.category).filter(Boolean)))
-  return Promise.resolve(cats)
+	const map = new Map();
+  for (const r of recipes) {
+    if (!r || !r.category) continue;
+    if (!map.has(r.category)) map.set(r.category, r);
+  }
+  // return one recipe object per category
+  return Promise.resolve(Array.from(map.values()));
 }
 
 export function fetchPopularRecipes(desc = true) {

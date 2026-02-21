@@ -10,7 +10,7 @@ function CategoryCard({ item }) {
 
       <div className="relative z-10 h-full flex flex-col justify-end p-4 text-white">
         <h3 className="text-sm md:text-base font-semibold leading-tight">
-          {item.name}
+          {item.category}
         </h3>
       </div>
     </article>
