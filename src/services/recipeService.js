@@ -28,5 +28,19 @@ export function fetchCategories() {
   return Promise.resolve(cats)
 }
 
-export default { fetchRecipes, fetchRecipeById, fetchCategories }
+/**
+ * Return recipes sorted by rating.
+ * @param {boolean} desc - if true, sort descending (highest first)
+ * @returns {Promise<Array>} resolves to sorted array
+ */
+export function fetchPopularRecipes(desc = true) {
+	const sorted = [...recipes].sort((a, b) => {
+		const ra = Number(a.rating) || 0
+		const rb = Number(b.rating) || 0
+		return desc ? rb - ra : ra - rb
+	})
+	return Promise.resolve(sorted)
+}
+
+export default { fetchRecipes, fetchRecipeById, fetchCategories, fetchPopularRecipes }
 
