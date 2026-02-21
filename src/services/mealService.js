@@ -1,6 +1,4 @@
-import { transformMeal } from "../utils/transformMeal";
-
-const BASE_URL = "https://www.themealdb.com/api/json/v1/1";
+import recipes from "../data/recipes.json";
 
 const HOME_CATEGORIES = [
   "Beef",
@@ -11,56 +9,51 @@ const HOME_CATEGORIES = [
   "Pasta",
 ];
 
+function transformLocalRecipe(r) {
+  return {
+    id: String(r.id),
+    title: r.name || r.title,
+    image: r.thumbnail || r.image,
+    category: r.category || "",
+    rating: r.rating,
+    time: r.time,
+    serving: r.serving,
+    ingredients: Array.isArray(r.ingredients)
+      ? r.ingredients.map((it) => ({ name: it, measure: "" }))
+      : [],
+    steps: Array.isArray(r.instructions) ? r.instructions : [],
+    nutrition: r.nutrition,
+  };
+}
+
 export async function getMeals() {
   try {
-    const results = await Promise.all(
-      HOME_CATEGORIES.map((category) =>
-        fetch(`${BASE_URL}/filter.php?c=${category}`).then((res) => res.json()),
-      ),
+    // สำหรับแต่ละ category เลือกเมนูสูงสุด 4 รายการ
+    const selected = HOME_CATEGORIES.flatMap((cat) =>
+      recipes.filter((r) => r.category === cat).slice(0, 4),
     );
 
-    // ตัดหมวดละ 4 เมนูก่อนรวม
-    const selectedMeals = results.flatMap((res) =>
-      (res.meals || []).slice(0, 4),
-    );
-
-    // ดึง detail
-    const detailedMeals = await Promise.all(
-      selectedMeals.map((meal) =>
-        fetch(`${BASE_URL}/lookup.php?i=${meal.idMeal}`)
-          .then((res) => res.json())
-          .then((data) => data.meals?.[0]),
-      ),
-    );
-
-    return detailedMeals.filter(Boolean).map(transformMeal);
+    return selected.map(transformLocalRecipe);
   } catch (error) {
-    console.error("Error fetching meals:", error);
+    console.error("Error loading local meals:", error);
     return [];
   }
 }
 
 export async function getCategories() {
-  const res = await fetch(`${BASE_URL}/categories.php`);
-  const data = await res.json();
-
-  if (!data.categories) return [];
-
-  // 🔥 กรองเอาเฉพาะ 6 หมวดที่เราเลือก
-  return data.categories
-    .filter((cat) => HOME_CATEGORIES.includes(cat.strCategory))
-    .map((cat) => ({
-      id: cat.idCategory,
-      name: cat.strCategory,
-      image: cat.strCategoryThumb,
-    }));
+  // หา thumbnail ตัวอย่างสำหรับแต่ละหมวด
+  return HOME_CATEGORIES.map((cat) => {
+    const sample = recipes.find((r) => r.category === cat);
+    return {
+      id: cat,
+      name: cat,
+      image: sample ? sample.thumbnail : "",
+    };
+  });
 }
 
 export async function getMealById(id) {
-  const res = await fetch(`${BASE_URL}/lookup.php?i=${id}`);
-
-  const data = await res.json();
-  if (!data.meals) return null;
-
-  return transformMeal(data.meals[0]);
+  const found = recipes.find((r) => String(r.id) === String(id));
+  if (!found) return null;
+  return transformLocalRecipe(found);
 }
