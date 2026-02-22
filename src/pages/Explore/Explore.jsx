@@ -3,6 +3,7 @@ import ExploreFilter from "./components/ExploreFilter";
 import RecipeMasonry from "./components/RecipeMasonry";
 import { useEffect, useState } from "react";
 import { fetchRecipes, fetchCategories } from "../../services/recipeService";
+import { useSearchParams } from "react-router-dom";
 
 function Explore() {
   const breakpointColumnsObj = {
@@ -12,6 +13,8 @@ function Explore() {
     768: 2,
     640: 1,
   };
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryParam = searchParams.get("q") || ""; // ดึงค่า ?q=... จาก URL
 
   const [allRecipes, setAllRecipes] = useState([]);
   const [recipes, setRecipes] = useState([]);
@@ -82,6 +85,12 @@ function Explore() {
     }
 
     setRecipes(filtered);
+
+    if (filters.query !== queryParam) {
+      setSearchParams(filters.query ? { q: filters.query } : {}, {
+        replace: true,
+      });
+    }
   };
 
   return (
@@ -91,6 +100,7 @@ function Explore() {
       <ExploreFilter
         categories={categories}
         onFilterChange={handleFilterChange}
+        initialQuery={queryParam} // ส่งค่าจาก URL ลงไปให้ Filter
       />
 
       {/* เพิ่ม Loading state เล็กน้อยให้ดูเนียนตา */}

@@ -4,10 +4,11 @@ import { useEffect, useState, useRef } from "react";
 export default function ExploreFilter({
   categories = [],
   onFilterChange = () => {},
+  initialQuery = "", // รับค่าเริ่มต้นจาก Props
 }) {
   // ค่าตัวกรองที่เลือก
   const [sort, setSort] = useState("ล่าสุด");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState(null);
   const [maxTime, setMaxTime] = useState(null);
   const [serving, setServing] = useState(null);
@@ -17,7 +18,10 @@ export default function ExploreFilter({
   const filterRef = useRef(null); // ไว้ใช้เช็คว่าคลิกข้างนอกกรอบหรือเปล่า
 
   const sortOptions = ["ล่าสุด", "ยอดนิยม", "คะแนนสูงสุด"];
-  const categoryOptions = ["ทั้งหมด", ...categories.map((c) => c.category || "ไม่ระบุ")];
+  const categoryOptions = [
+    "ทั้งหมด",
+    ...categories.map((c) => c.category || "ไม่ระบุ"),
+  ];
   const timeOptions = [
     { label: "ทั้งหมด", value: null },
     { label: "≤ 30 นาที", value: 30 },
@@ -45,6 +49,10 @@ export default function ExploreFilter({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    setQuery(initialQuery);
+  }, [initialQuery]);
 
   function clearAll() {
     setSort("ล่าสุด");
