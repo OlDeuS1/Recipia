@@ -2,26 +2,30 @@ import Breadcrumb from "../../components/common/Breadcrumb";
 import ExploreFilter from "./components/ExploreFilter";
 import RecipeMasonry from "./components/RecipeMasonry";
 import { useEffect, useState } from "react";
-import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 import { useSearchParams } from "react-router-dom";
+import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 
 function Explore() {
-  const breakpointColumnsObj = {
-    default: 4,
-    1280: 4,
-    1024: 3,
-    768: 2,
-    640: 1,
-  };
   const [searchParams, setSearchParams] = useSearchParams();
-  const queryParam = searchParams.get("q") || ""; // ดึงค่า ?q=... จาก URL
+  const queryParam = searchParams.get("q") || ""; // ดึงคำค้นหาจาก URL
+
+  const breakpointColumnsObj = { default: 4, 1280: 4, 1024: 3, 768: 2, 640: 1 };
 
   const [allRecipes, setAllRecipes] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ดึงข้อมูลตอนเปิดหน้า
+  // เก็บ State ของ Filter ปัจจุบันไว้ที่นี่ (เอาค่าเริ่มต้นจาก URL มาใส่)
+  const [activeFilters, setActiveFilters] = useState({
+    query: queryParam,
+    sort: "ล่าสุด",
+    category: null,
+    maxTime: null,
+    serving: null,
+  });
+
+  // 1. โหลดข้อมูลแค่ครั้งเดียวตอนเปิดหน้า
   useEffect(() => {
     async function loadData() {
       setLoading(true);
@@ -31,8 +35,8 @@ function Explore() {
           fetchCategories(),
         ]);
         setAllRecipes(mealData);
-        setRecipes(mealData);
         setCategories(categoryData);
+        // ❌ เอา setRecipes(mealData) ออก เพราะเดี๋ยวเราจะให้ useEffect ด้านล่างจัดการให้
       } catch (error) {
         console.error("เกิดข้อผิดพลาดในการโหลดข้อมูล:", error);
       } finally {
@@ -42,50 +46,50 @@ function Explore() {
     loadData();
   }, []);
 
-  // ฟังก์ชันจัดการตอน User เปลี่ยน Filter
-  const handleFilterChange = (filters) => {
+  // 2. กรองข้อมูลอัตโนมัติ เมื่อ Data โหลดเสร็จ หรือ Filter เปลี่ยน
+  useEffect(() => {
     let filtered = [...allRecipes];
 
-    // 1. กรองหมวดหมู่
-    if (filters.category) {
-      filtered = filtered.filter((r) => r.category === filters.category);
+    if (activeFilters.category) {
+      filtered = filtered.filter((r) => r.category === activeFilters.category);
     }
-
-    // 2. กรองเวลาทำอาหาร
-    if (filters.maxTime) {
+    if (activeFilters.maxTime) {
       filtered = filtered.filter(
-        (r) => Number(r.time) <= Number(filters.maxTime),
+        (r) => Number(r.time) <= Number(activeFilters.maxTime),
       );
     }
-
-    // 3. กรองจำนวนคนเสิร์ฟ
-    if (filters.serving) {
-      if (filters.serving === 999) {
-        filtered = filtered.filter((r) => Number(r.serving) >= 5); // 5+ คน
+    if (activeFilters.serving) {
+      if (activeFilters.serving === 999) {
+        filtered = filtered.filter((r) => Number(r.serving) >= 5);
       } else {
         filtered = filtered.filter(
-          (r) => Number(r.serving) <= Number(filters.serving),
+          (r) => Number(r.serving) <= Number(activeFilters.serving),
         );
       }
     }
-
-    // 4. กรองจากคำค้นหา (Search)
-    if (filters.query) {
-      const q = filters.query.toLowerCase();
+    if (activeFilters.query) {
+      const q = activeFilters.query.toLowerCase();
       filtered = filtered.filter((r) =>
         (r.name || "").toLowerCase().includes(q),
       );
     }
-
-    // 5. จัดเรียงข้อมูล (Sort)
-    if (filters.sort === "คะแนนสูงสุด" || filters.sort === "ยอดนิยม") {
+    if (
+      activeFilters.sort === "คะแนนสูงสุด" ||
+      activeFilters.sort === "ยอดนิยม"
+    ) {
       filtered.sort(
         (a, b) => (Number(b.rating) || 0) - (Number(a.rating) || 0),
       );
     }
 
     setRecipes(filtered);
+  }, [allRecipes, activeFilters]);
 
+  // 3. ฟังก์ชันรับค่าจาก Component ลูก (ExploreFilter)
+  const handleFilterChange = (filters) => {
+    setActiveFilters(filters);
+
+    // อัปเดต URL สวยๆ เวลาพิมพ์ช่องค้นหา (ถ้าค่าไม่ตรงกับ URL)
     if (filters.query !== queryParam) {
       setSearchParams(filters.query ? { q: filters.query } : {}, {
         replace: true,
@@ -100,10 +104,9 @@ function Explore() {
       <ExploreFilter
         categories={categories}
         onFilterChange={handleFilterChange}
-        initialQuery={queryParam} // ส่งค่าจาก URL ลงไปให้ Filter
+        initialQuery={queryParam} // ส่งคำค้นหาจาก URL ไปตั้งค่าเริ่มต้นให้ช่อง Input
       />
 
-      {/* เพิ่ม Loading state เล็กน้อยให้ดูเนียนตา */}
       {loading ? (
         <div className="text-center py-10 text-gray-500">
           กำลังโหลดเมนูอร่อยๆ...

@@ -34,6 +34,10 @@ export default function ExploreFilter({
     { label: "5+ คน", value: 999 },
   ];
 
+  useEffect(() => {
+    setQuery(initialQuery);
+  }, [initialQuery]);
+
   // อัปเดต Filter กลับไปที่หน้า Explore เมื่อค่าเปลี่ยน
   useEffect(() => {
     onFilterChange({ sort, query, category, maxTime, serving });
@@ -49,10 +53,6 @@ export default function ExploreFilter({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  useEffect(() => {
-    setQuery(initialQuery);
-  }, [initialQuery]);
 
   function clearAll() {
     setSort("ล่าสุด");
