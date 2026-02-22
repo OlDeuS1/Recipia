@@ -26,6 +26,7 @@ export default function ExploreFilter({
     { label: "ทั้งหมด", value: null },
     { label: "≤ 30 นาที", value: 30 },
     { label: "≤ 60 นาที", value: 60 },
+    { label: "> 60 นาที", value: 999 },
   ];
   const servingOptions = [
     { label: "ทั้งหมด", value: null },
@@ -107,7 +108,7 @@ export default function ExploreFilter({
             onClick={() => toggleMenu("time")}
             className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition"
           >
-            {maxTime ? `≤ ${maxTime} นาที` : "เวลาทั้งหมด"}
+            {timeOptions.find((o) => o.value === maxTime)?.label || "เวลาทั้งหมด"}
             <ChevronDown size={14} />
           </button>
           {activeMenu === "time" && (

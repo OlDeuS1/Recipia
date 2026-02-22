@@ -54,17 +54,30 @@ function Explore() {
       filtered = filtered.filter((r) => r.category === activeFilters.category);
     }
     if (activeFilters.maxTime) {
-      filtered = filtered.filter(
-        (r) => Number(r.time) <= Number(activeFilters.maxTime),
-      );
+      const timeVal = Number(activeFilters.maxTime);
+      if (timeVal === 999) {
+        // ถ้าเป็น 999 ให้กรองเอาเฉพาะที่มากกว่า 60 นาที
+        filtered = filtered.filter((r) => Number(r.time) > 60);
+      } else {
+        // ถ้าเป็นค่าอื่น (30, 60) ให้กรองตามปกติน้อยกว่าหรือเท่ากับ
+        filtered = filtered.filter((r) => Number(r.time) <= timeVal);
+      }
     }
     if (activeFilters.serving) {
-      if (activeFilters.serving === 999) {
-        filtered = filtered.filter((r) => Number(r.serving) >= 5);
-      } else {
+      const serveVal = Number(activeFilters.serving);
+      if (serveVal === 2) {
+        // 1-2 คน
         filtered = filtered.filter(
-          (r) => Number(r.serving) <= Number(activeFilters.serving),
+          (r) => Number(r.serving) >= 1 && Number(r.serving) <= 2,
         );
+      } else if (serveVal === 4) {
+        // 3-4 คน
+        filtered = filtered.filter(
+          (r) => Number(r.serving) >= 3 && Number(r.serving) <= 4,
+        );
+      } else if (serveVal === 999) {
+        // 5 คนขึ้นไป
+        filtered = filtered.filter((r) => Number(r.serving) >= 5);
       }
     }
     if (activeFilters.query) {
