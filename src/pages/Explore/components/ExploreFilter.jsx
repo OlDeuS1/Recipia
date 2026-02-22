@@ -17,7 +17,7 @@ export default function ExploreFilter({
   const [activeMenu, setActiveMenu] = useState(null);
   const filterRef = useRef(null); // ไว้ใช้เช็คว่าคลิกข้างนอกกรอบหรือเปล่า
 
-  const sortOptions = ["ล่าสุด", "ยอดนิยม", "คะแนนสูงสุด"];
+  const sortOptions = ["ล่าสุด", "ยอดนิยม"];
   const categoryOptions = [
     "ทั้งหมด",
     ...categories.map((c) => c.category || "ไม่ระบุ"),
