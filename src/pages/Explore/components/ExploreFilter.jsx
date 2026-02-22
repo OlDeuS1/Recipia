@@ -4,18 +4,17 @@ import { useEffect, useState, useRef } from "react";
 export default function ExploreFilter({
   categories = [],
   onFilterChange = () => {},
-  initialQuery = "", // รับค่าเริ่มต้นจาก Props
+  initialQuery = "",
+  initialCategory = null,
 }) {
-  // ค่าตัวกรองที่เลือก
   const [sort, setSort] = useState("ล่าสุด");
   const [query, setQuery] = useState(initialQuery);
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState(initialCategory);
   const [maxTime, setMaxTime] = useState(null);
   const [serving, setServing] = useState(null);
 
-  // ควบคุมการเปิด-ปิด Dropdown ด้วย State เดียว (ลดการสร้าง State ซ้ำซ้อน)
   const [activeMenu, setActiveMenu] = useState(null);
-  const filterRef = useRef(null); // ไว้ใช้เช็คว่าคลิกข้างนอกกรอบหรือเปล่า
+  const filterRef = useRef(null);
 
   const sortOptions = ["ล่าสุด", "ยอดนิยม"];
   const categoryOptions = [
@@ -39,12 +38,14 @@ export default function ExploreFilter({
     setQuery(initialQuery);
   }, [initialQuery]);
 
-  // อัปเดต Filter กลับไปที่หน้า Explore เมื่อค่าเปลี่ยน
+  useEffect(() => {
+    setCategory(initialCategory);
+  }, [initialCategory]);
+
   useEffect(() => {
     onFilterChange({ sort, query, category, maxTime, serving });
   }, [sort, query, category, maxTime, serving]);
 
-  // ซ่อน Dropdown เมื่อคลิกที่อื่นบนหน้าจอ
   useEffect(() => {
     function handleClickOutside(event) {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
@@ -63,7 +64,6 @@ export default function ExploreFilter({
     setServing(null);
   }
 
-  // ตัวช่วยในการสลับเปิด-ปิดเมนู
   const toggleMenu = (menuName) => {
     setActiveMenu(activeMenu === menuName ? null : menuName);
   };
@@ -108,7 +108,8 @@ export default function ExploreFilter({
             onClick={() => toggleMenu("time")}
             className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition"
           >
-            {timeOptions.find((o) => o.value === maxTime)?.label || "เวลาทั้งหมด"}
+            {timeOptions.find((o) => o.value === maxTime)?.label ||
+              "เวลาทั้งหมด"}
             <ChevronDown size={14} />
           </button>
           {activeMenu === "time" && (

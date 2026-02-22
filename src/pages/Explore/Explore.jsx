@@ -7,7 +7,8 @@ import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 
 function Explore() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const queryParam = searchParams.get("q") || ""; // ดึงคำค้นหาจาก URL
+  const queryParam = searchParams.get("q") || "";
+  const categoryParam = searchParams.get("category") || null; // 🌟 ดึงค่าหมวดหมู่จาก URL
 
   const breakpointColumnsObj = { default: 4, 1280: 4, 1024: 3, 768: 2, 640: 1 };
 
@@ -16,16 +17,15 @@ function Explore() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // เก็บ State ของ Filter ปัจจุบันไว้ที่นี่ (เอาค่าเริ่มต้นจาก URL มาใส่)
+  // 🌟 นำค่าจาก URL มาตั้งเป็นค่าเริ่มต้น
   const [activeFilters, setActiveFilters] = useState({
     query: queryParam,
     sort: "ล่าสุด",
-    category: null,
+    category: categoryParam,
     maxTime: null,
     serving: null,
   });
 
-  // 1. โหลดข้อมูลแค่ครั้งเดียวตอนเปิดหน้า
   useEffect(() => {
     async function loadData() {
       setLoading(true);
@@ -36,7 +36,6 @@ function Explore() {
         ]);
         setAllRecipes(mealData);
         setCategories(categoryData);
-        // ❌ เอา setRecipes(mealData) ออก เพราะเดี๋ยวเราจะให้ useEffect ด้านล่างจัดการให้
       } catch (error) {
         console.error("เกิดข้อผิดพลาดในการโหลดข้อมูล:", error);
       } finally {
@@ -46,7 +45,6 @@ function Explore() {
     loadData();
   }, []);
 
-  // 2. กรองข้อมูลอัตโนมัติ เมื่อ Data โหลดเสร็จ หรือ Filter เปลี่ยน
   useEffect(() => {
     let filtered = [...allRecipes];
 
@@ -56,27 +54,22 @@ function Explore() {
     if (activeFilters.maxTime) {
       const timeVal = Number(activeFilters.maxTime);
       if (timeVal === 999) {
-        // ถ้าเป็น 999 ให้กรองเอาเฉพาะที่มากกว่า 60 นาที
         filtered = filtered.filter((r) => Number(r.time) > 60);
       } else {
-        // ถ้าเป็นค่าอื่น (30, 60) ให้กรองตามปกติน้อยกว่าหรือเท่ากับ
         filtered = filtered.filter((r) => Number(r.time) <= timeVal);
       }
     }
     if (activeFilters.serving) {
       const serveVal = Number(activeFilters.serving);
       if (serveVal === 2) {
-        // 1-2 คน
         filtered = filtered.filter(
           (r) => Number(r.serving) >= 1 && Number(r.serving) <= 2,
         );
       } else if (serveVal === 4) {
-        // 3-4 คน
         filtered = filtered.filter(
           (r) => Number(r.serving) >= 3 && Number(r.serving) <= 4,
         );
       } else if (serveVal === 999) {
-        // 5 คนขึ้นไป
         filtered = filtered.filter((r) => Number(r.serving) >= 5);
       }
     }
@@ -98,15 +91,21 @@ function Explore() {
     setRecipes(filtered);
   }, [allRecipes, activeFilters]);
 
-  // 3. ฟังก์ชันรับค่าจาก Component ลูก (ExploreFilter)
   const handleFilterChange = (filters) => {
     setActiveFilters(filters);
 
-    // อัปเดต URL สวยๆ เวลาพิมพ์ช่องค้นหา (ถ้าค่าไม่ตรงกับ URL)
-    if (filters.query !== queryParam) {
-      setSearchParams(filters.query ? { q: filters.query } : {}, {
-        replace: true,
-      });
+    // 🌟 อัปเดต URL ให้ตรงกับ Filter ปัจจุบันทั้ง search และ category
+    const newParams = new URLSearchParams(searchParams);
+
+    if (filters.query) newParams.set("q", filters.query);
+    else newParams.delete("q");
+
+    if (filters.category) newParams.set("category", filters.category);
+    else newParams.delete("category");
+
+    // อัปเดตเฉพาะตอนที่มีการเปลี่ยนแปลงจริงๆ เพื่อกันไม่ให้หน้าจอกระตุก
+    if (newParams.toString() !== searchParams.toString()) {
+      setSearchParams(newParams, { replace: true });
     }
   };
 
@@ -117,7 +116,8 @@ function Explore() {
       <ExploreFilter
         categories={categories}
         onFilterChange={handleFilterChange}
-        initialQuery={queryParam} // ส่งคำค้นหาจาก URL ไปตั้งค่าเริ่มต้นให้ช่อง Input
+        initialQuery={queryParam}
+        initialCategory={categoryParam} // 🌟 ส่ง category เริ่มต้นไปที่ ExploreFilter
       />
 
       {loading ? (
