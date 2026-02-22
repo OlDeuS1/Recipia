@@ -1,12 +1,62 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import UploadBox from "./components/UploadBox";
 import IngredientSection from "./components/IngredientSection";
 import StepSection from "./components/StepSection";
 import Breadcrumb from "../../components/common/Breadcrumb";
 import SectionHead from "../../components/common/SectionHead";
-import NutritionSection from "./components/NutritionSection";
 import BasicSection from "./components/BasicSection";
+import NutritionSection from "./components/NutritionSection";
 
 export default function CreateRecipe() {
+  const navigate = useNavigate();
+
+  const initialForm = {
+    name: "",
+    category: "",
+    description: "",
+    time: "",
+    serving: "",
+    image: "",
+    ingredients: [""],
+    steps: [""],
+    calories: "",
+    protein: "",
+    fat: "",
+    carbs: "",
+  };
+
+  const [formData, setFormData] = useState(initialForm);
+
+  const handleReset = () => {
+    setFormData(initialForm);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.image) {
+      alert("กรุณาใส่ชื่อสูตรและรูปภาพให้ครบถ้วน");
+      return;
+    }
+
+    const newRecipe = {
+      ...formData,
+      id: "custom-" + Date.now(),
+      rating: 0,
+    };
+
+    const existing = JSON.parse(localStorage.getItem("myRecipes")) || [];
+    localStorage.setItem("myRecipes", JSON.stringify([newRecipe, ...existing]));
+
+    alert("บันทึกสูตรอาหารเรียบร้อย!");
+    navigate("/");
+  };
+
   return (
     <>
       <div className="flex flex-col gap-10">
@@ -16,34 +66,46 @@ export default function CreateRecipe() {
           kicker="แบ่งปันสูตรอาหารของคุณให้ชุมชน"
         />
       </div>
+
       <div className="max-w-4xl mx-auto px-6 py-14 space-y-10">
-        <UploadBox />
+        <form
+          onSubmit={handleSave}
+          onReset={handleReset}
+          className="space-y-10"
+        >
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              รูปหน้าปก
+            </label>
+            <UploadBox
+              image={formData.image}
+              setImage={(img) => setFormData({ ...formData, image: img })}
+            />
+          </div>
+          <BasicSection formData={formData} handleChange={handleChange} />
+          <IngredientSection
+            ingredients={formData.ingredients}
+            setFormData={setFormData}
+          />
+          <StepSection steps={formData.steps} setFormData={setFormData} />
 
-        <BasicSection />
+          <NutritionSection formData={formData} handleChange={handleChange} />
 
-        <IngredientSection />
-
-        <StepSection />
-
-        <NutritionSection />
-
-        {/* Buttons */}
-        <div className="flex gap-4 pt-4">
-          <button
-            className="px-8 py-3 bg-gray-900 text-white
-                             rounded-xl font-medium
-                             hover:bg-gray-800 transition"
-          >
-            บันทึกสูตร
-          </button>
-
-          <button
-            className="px-8 py-3 bg-gray-200 text-gray-700
-                             rounded-xl hover:bg-gray-300 transition"
-          >
-            ยกเลิก
-          </button>
-        </div>
+          <div className="flex gap-4 pt-4">
+            <button
+              type="submit"
+              className="px-8 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition shadow-md"
+            >
+              บันทึกสูตร
+            </button>
+            <button
+              type="reset"
+              className="px-8 py-3 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition"
+            >
+              ยกเลิก
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );
