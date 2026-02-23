@@ -7,7 +7,7 @@ function CategorySection({ categories = [] }) {
       <SectionHead title="เลือกตามหมวดหมู่" />
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {categories.map((item) => (
+        {categories.slice(0, 6).map((item) => (
           <CategoryCard key={item.id} item={item} />
         ))}
       </div>
