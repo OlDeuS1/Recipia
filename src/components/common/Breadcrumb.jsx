@@ -7,9 +7,9 @@ export default function Breadcrumb() {
   const segments = location.pathname.split("/").filter(Boolean);
 
   const labelMap = {
-    explore: "ค้นหา",
     bookmark: "บุ๊กมาร์ค",
     recipe: "สูตรอาหาร",
+    create: "สร้างสูตร",
   };
 
   const [namesById, setNamesById] = useState({});
