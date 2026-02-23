@@ -1,6 +1,7 @@
 import FormSection from "./FormSection";
 import TextArea from "./TextArea";
 import TextInput from "./TextInput";
+import CategoryDatalist from "./CategoryDatalist";
 
 export default function BasicSection({ formData, handleChange }) {
   return (
@@ -13,13 +14,7 @@ export default function BasicSection({ formData, handleChange }) {
           placeholder="ชื่อสูตรอาหาร"
           label="ชื่อสูตร"
         />
-        <TextInput
-          name="category"
-          value={formData.category}
-          onChange={handleChange}
-          placeholder="หมวดหมู่อาหาร"
-          label="หมวดหมู่"
-        />
+        <CategoryDatalist value={formData.category} onChange={handleChange} />
       </div>
       <TextArea
         name="description"
