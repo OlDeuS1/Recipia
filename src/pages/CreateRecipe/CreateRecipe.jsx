@@ -50,7 +50,6 @@ export default function CreateRecipe() {
     const newRecipe = {
       ...formData,
       id: fetchRecipes.length + 1,
-      rating: 0,
     };
 
     const existing = JSON.parse(localStorage.getItem("myRecipes")) || [];
