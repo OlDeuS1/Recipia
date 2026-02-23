@@ -27,11 +27,13 @@ export default function UploadBox({ image, setImage }) {
       />
 
       {image ? (
-        <img
-          src={image}
-          alt="Preview"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <div className="max-w-sm mx-auto">
+          <img
+            src={image}
+            alt="Preview"
+            className="w-full rounded-2xl object-cover"
+          />
+        </div>
       ) : (
         <>
           <Upload size={28} className="text-gray-500" />
