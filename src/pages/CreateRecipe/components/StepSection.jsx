@@ -2,24 +2,27 @@ import { Plus, X } from "lucide-react";
 import FormSection from "./FormSection";
 import TextArea from "./TextArea";
 
-export default function StepSection({ steps, setFormData }) {
+export default function StepSection({ instructions, setFormData }) {
   // ฟังก์ชันเพิ่มช่องวิธีทำ
   const addField = () => {
-    setFormData((prev) => ({ ...prev, steps: [...prev.steps, ""] }));
+    setFormData((prev) => ({
+      ...prev,
+      instructions: [...prev.instructions, ""],
+    }));
   };
 
   // ฟังก์ชันอัปเดตข้อความเมื่อพิมพ์
   const updateField = (index, value) => {
-    const newSteps = [...steps];
-    newSteps[index] = value;
-    setFormData((prev) => ({ ...prev, steps: newSteps }));
+    const newInstructions = [...instructions];
+    newInstructions[index] = value;
+    setFormData((prev) => ({ ...prev, instructions: newInstructions }));
   };
 
   // ฟังก์ชันลบช่องวิธีทำ
   const removeField = (index) => {
     setFormData((prev) => ({
       ...prev,
-      steps: prev.steps.filter((_, i) => i !== index),
+      instructions: prev.instructions.filter((_, i) => i !== index),
     }));
   };
 
@@ -38,7 +41,7 @@ export default function StepSection({ steps, setFormData }) {
       }
     >
       <div className="space-y-4">
-        {steps.map((item, index) => (
+        {instructions.map((item, index) => (
           <div key={index} className="flex gap-4 items-start">
             {/* ตัวเลขลำดับขั้นตอน */}
             <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 text-gray-800 font-semibold rounded-full mt-2">
@@ -55,7 +58,7 @@ export default function StepSection({ steps, setFormData }) {
             </div>
 
             {/* ปุ่มลบ (จะแสดงก็ต่อเมื่อมีมากกว่า 1 ขั้นตอน) */}
-            {steps.length > 1 && (
+            {instructions.length > 1 && (
               <button
                 type="button"
                 onClick={() => removeField(index)}

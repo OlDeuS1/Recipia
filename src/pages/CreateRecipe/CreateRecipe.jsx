@@ -7,6 +7,7 @@ import Breadcrumb from "../../components/common/Breadcrumb";
 import SectionHead from "../../components/common/SectionHead";
 import BasicSection from "./components/BasicSection";
 import NutritionSection from "./components/NutritionSection";
+import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 
 export default function CreateRecipe() {
   const navigate = useNavigate();
@@ -19,11 +20,13 @@ export default function CreateRecipe() {
     serving: "",
     image: "",
     ingredients: [""],
-    steps: [""],
-    calories: "",
-    protein: "",
-    fat: "",
-    carbs: "",
+    instructions: [""],
+    nutrition: {
+      calories: "",
+      protein: "",
+      fat: "",
+      carb: "",
+    },
   };
 
   const [formData, setFormData] = useState(initialForm);
@@ -46,7 +49,7 @@ export default function CreateRecipe() {
 
     const newRecipe = {
       ...formData,
-      id: "custom-" + Date.now(),
+      id: fetchRecipes.length + 1,
       rating: 0,
     };
 
@@ -87,9 +90,12 @@ export default function CreateRecipe() {
             ingredients={formData.ingredients}
             setFormData={setFormData}
           />
-          <StepSection steps={formData.steps} setFormData={setFormData} />
+          <StepSection
+            instructions={formData.instructions}
+            setFormData={setFormData}
+          />
 
-          <NutritionSection formData={formData} handleChange={handleChange} />
+          <NutritionSection formData={formData} setFormData={setFormData} />
 
           <div className="flex gap-4 pt-4">
             <button
