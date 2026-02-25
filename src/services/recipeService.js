@@ -1,10 +1,8 @@
 import recipes from "../data/recipes.json";
 
-// 🌟 สร้างฟังก์ชันตัวช่วยสำหรับดึงข้อมูลทั้งหมด (ดั้งเดิม + ที่สร้างใหม่)
 function getAllRecipes() {
   let localRecipes = [];
   try {
-    // ดึงสูตรอาหารที่สร้างใหม่จาก localStorage
     const saved = localStorage.getItem("myRecipes");
     if (saved) {
       localRecipes = JSON.parse(saved);
@@ -13,12 +11,10 @@ function getAllRecipes() {
     console.error("ไม่สามารถดึงข้อมูลจาก localStorage ได้:", error);
   }
 
-  // เอาสูตรที่สร้างใหม่ (localRecipes) มาไว้ด้านบนสุด แล้วตามด้วยสูตรดั้งเดิม (recipes)
   return [...localRecipes, ...recipes];
 }
 
 export function fetchRecipes() {
-  // ส่งข้อมูลที่ผสมแล้วกลับไป
   return Promise.resolve(getAllRecipes());
 }
 
@@ -50,10 +46,3 @@ export function fetchPopularRecipes(desc = true) {
   });
   return Promise.resolve(sorted);
 }
-
-export default {
-  fetchRecipes,
-  fetchRecipeById,
-  fetchCategories,
-  fetchPopularRecipes,
-};
