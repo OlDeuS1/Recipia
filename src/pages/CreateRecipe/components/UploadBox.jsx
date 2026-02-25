@@ -8,7 +8,7 @@ export default function UploadBox({ image, setImage }) {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => setImage(reader.result); // แปลงภาพเพื่อแสดงผลและบันทึก
+      reader.onloadend = () => setImage(reader.result);
       reader.readAsDataURL(file);
     }
   };

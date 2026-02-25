@@ -31,7 +31,7 @@ export default function StepSection({ instructions, setFormData }) {
       title="วิธีทำ"
       action={
         <button
-          type="button" // ต้องใส่ type="button" ป้องกันไม่ให้มันเผลอ submit form
+          type="button"
           onClick={addField}
           className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm hover:bg-gray-800 transition"
         >
@@ -57,7 +57,6 @@ export default function StepSection({ instructions, setFormData }) {
               />
             </div>
 
-            {/* ปุ่มลบ (จะแสดงก็ต่อเมื่อมีมากกว่า 1 ขั้นตอน) */}
             {instructions.length > 1 && (
               <button
                 type="button"
