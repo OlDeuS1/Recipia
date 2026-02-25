@@ -5,22 +5,19 @@ import { Trash2 } from "lucide-react";
 export default function BookmarkGrid() {
   const [bookmarks, setBookmarks] = useState([]);
 
-  // 🌟 ดึงข้อมูลที่บันทึกไว้จาก localStorage ตอนเปิดหน้า
   useEffect(() => {
     const savedBookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
     setBookmarks(savedBookmarks);
   }, []);
 
-  // 🌟 ฟังก์ชันลบรายการออกจากที่บันทึก
   const handleRemove = (id) => {
     const updatedBookmarks = bookmarks.filter(
       (item) => String(item.id) !== String(id),
     );
     setBookmarks(updatedBookmarks); // อัปเดตหน้าจอทันที
-    localStorage.setItem("bookmarks", JSON.stringify(updatedBookmarks)); // อัปเดตข้อมูลใน localStorage
+    localStorage.setItem("bookmarks", JSON.stringify(updatedBookmarks));
   };
 
-  // ถ้ายังไม่มีข้อมูลเลย ให้แสดงข้อความแจ้งเตือน
   if (bookmarks.length === 0) {
     return (
       <div className="text-center py-20 text-gray-500 bg-white rounded-3xl border border-dashed border-gray-300">

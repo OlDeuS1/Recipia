@@ -8,7 +8,7 @@ import { fetchRecipes, fetchCategories } from "../../services/recipeService";
 function Explore() {
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParam = searchParams.get("q") || "";
-  const categoryParam = searchParams.get("category") || null; // 🌟 ดึงค่าหมวดหมู่จาก URL
+  const categoryParam = searchParams.get("category") || null;
 
   const breakpointColumnsObj = { default: 4, 1280: 4, 1024: 3, 768: 2, 640: 1 };
 
@@ -17,7 +17,6 @@ function Explore() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 🌟 นำค่าจาก URL มาตั้งเป็นค่าเริ่มต้น
   const [activeFilters, setActiveFilters] = useState({
     query: queryParam,
     sort: "ล่าสุด",
@@ -94,7 +93,6 @@ function Explore() {
   const handleFilterChange = (filters) => {
     setActiveFilters(filters);
 
-    // 🌟 อัปเดต URL ให้ตรงกับ Filter ปัจจุบันทั้ง search และ category
     const newParams = new URLSearchParams(searchParams);
 
     if (filters.query) newParams.set("q", filters.query);
@@ -103,7 +101,6 @@ function Explore() {
     if (filters.category) newParams.set("category", filters.category);
     else newParams.delete("category");
 
-    // อัปเดตเฉพาะตอนที่มีการเปลี่ยนแปลงจริงๆ เพื่อกันไม่ให้หน้าจอกระตุก
     if (newParams.toString() !== searchParams.toString()) {
       setSearchParams(newParams, { replace: true });
     }
@@ -117,7 +114,7 @@ function Explore() {
         categories={categories}
         onFilterChange={handleFilterChange}
         initialQuery={queryParam}
-        initialCategory={categoryParam} // 🌟 ส่ง category เริ่มต้นไปที่ ExploreFilter
+        initialCategory={categoryParam}
       />
 
       {loading ? (
