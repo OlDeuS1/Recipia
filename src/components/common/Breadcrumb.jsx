@@ -61,14 +61,18 @@ export default function Breadcrumb() {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="text-sm text-gray-500 flex items-center gap-2"
+      className="flex items-center gap-1 text-xs sm:text-sm md:text-[0.95rem] text-gray-500"
     >
       {crumbs.map((c, i) => (
         <span
           key={c.to}
-          className={i === crumbs.length - 1 ? "text-gray-900 font-medium" : ""}
+          className={
+            i === crumbs.length - 1
+              ? "text-gray-900 font-medium truncate max-w-[10rem] sm:max-w-none"
+              : "truncate max-w-[10rem] sm:max-w-none"
+          }
         >
-          {i !== 0 && <span className="text-gray-400">/</span>}
+          {i !== 0 && <span className="mx-1 text-gray-400">/</span>}
 
           {i === crumbs.length - 1 ? (
             <span>{c.label}</span>

@@ -44,12 +44,14 @@ export default function RecipeDetail() {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="flex flex-wrap justify-between items-center mb-12">
-        <Breadcrumb />
+      <div className="flex flex-nowrap items-center justify-between gap-3 mb-12">
+        <div className="min-w-0 flex-1">
+          <Breadcrumb />
+        </div>
 
         <button
           onClick={toggleBookmark}
-          className={`flex items-center gap-2 px-5 py-2.5 rounded-full shadow-sm border text-sm font-medium transition ${
+          className={`flex shrink-0 items-center gap-2 px-5 py-2.5 rounded-full shadow-sm border text-sm font-medium whitespace-nowrap transition ${
             isBookmarked
               ? "bg-slate-900 text-white border-slate-900 hover:bg-slate-800"
               : "bg-white text-gray-800 border-gray-200 hover:bg-gray-50"
