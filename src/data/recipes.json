@@ -349,5 +349,92 @@
       "2 tbsp Sugar",
       "2 tbsp Flour"
     ]
+  },
+  {
+    "id": "54017",
+    "name": "Bruschetta with Tomato & Basil",
+    "category": "Appetizer",
+    "rating": 4.7,
+    "time": 15,
+    "serving": 4,
+    "nutrition": {
+      "calories": 150,
+      "protein": 4,
+      "fat": 7,
+      "carb": 20
+    },
+    "instructions": [
+      "Slice baguette and toast until golden brown. Rub each slice with a garlic clove.",
+      "Toss diced tomatoes with olive oil, balsamic glaze, and chopped fresh basil.",
+      "Season with salt and pepper to taste.",
+      "Spoon the tomato mixture onto the toasted bread and serve immediately."
+    ],
+    "image": "/images/tomato-and-basil-bruschetta-75254-1.jpeg",
+    "ingredients": [
+      "1 Baguette",
+      "3 Roma Tomatoes",
+      "1 bunch Fresh Basil",
+      "2 tbsp Olive Oil",
+      "1 tbsp Balsamic Glaze",
+      "1 Clove Garlic"
+    ]
+  },
+  {
+    "id": "54018",
+    "name": "Crispy Calamari with Marinara Sauce",
+    "category": "Appetizer",
+    "rating": 4.8,
+    "time": 25,
+    "serving": 3,
+    "nutrition": {
+      "calories": 380,
+      "protein": 18,
+      "fat": 22,
+      "carb": 28
+    },
+    "instructions": [
+      "Clean and slice squid into rings. Pat dry with paper towels.",
+      "Dredge squid rings in a mixture of flour, salt, and paprika.",
+      "Deep fry in hot oil until golden and crispy, about 2-3 minutes.",
+      "Serve hot with marinara sauce and lemon wedges on the side."
+    ],
+    "image": "/images/pile-of-fried-calamari.jpg",
+    "ingredients": [
+      "500g Squid",
+      "1 cup All-purpose Flour",
+      "1/2 cup Marinara Sauce",
+      "1 tsp Paprika",
+      "1 Lemon",
+      "Oil for frying"
+    ]
+  },
+  {
+    "id": "54019",
+    "name": "Spinach Artichoke Dip",
+    "category": "Appetizer",
+    "rating": 4.9,
+    "time": 30,
+    "serving": 6,
+    "nutrition": {
+      "calories": 290,
+      "protein": 9,
+      "fat": 24,
+      "carb": 12
+    },
+    "instructions": [
+      "Combine cream cheese, sour cream, and mayonnaise in a bowl until smooth.",
+      "Stir in chopped spinach, artichoke hearts, and half of the parmesan and mozzarella.",
+      "Transfer to a baking dish and top with remaining cheese.",
+      "Bake at 190°C for 20-25 minutes until bubbly and golden on top."
+    ],
+    "image": "/images/spinach-artichoke-dip-1-2.webp",
+    "ingredients": [
+      "250g Cream Cheese",
+      "200g Frozen Spinach (thawed and squeezed)",
+      "1 can Artichoke Hearts (chopped)",
+      "1/2 cup Mozzarella Cheese",
+      "1/2 cup Parmesan Cheese",
+      "1/4 cup Mayonnaise"
+    ]
   }
 ]
