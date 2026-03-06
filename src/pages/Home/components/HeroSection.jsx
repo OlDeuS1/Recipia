@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function HeroSection() {
   return (
     <section
-      className="relative rounded-2xl overflow-hidden h-[500px] md:h-[600px] grid items-end"
+      className="relative rounded-2xl overflow-hidden min-h-[360px] sm:min-h-[420px] md:min-h-[520px] lg:min-h-[620px] grid items-end"
       aria-label="Hero"
     >
       <img
@@ -12,20 +12,19 @@ function HeroSection() {
         alt="Delicious food"
         className="absolute inset-0 w-full h-full object-cover"
       />
-
       <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 text-white px-6 md:px-12 py-20 md:py-24 max-w-3xl flex flex-col gap-6">
-        <h1 className="font-display text-4xl md:text-6xl leading-tight m-0">
+      <div className="relative z-10 text-white px-4 sm:px-6 md:px-10 lg:px-16 py-12 sm:py-16 md:py-20 lg:py-24 max-w-xl sm:max-w-2xl lg:max-w-3xl flex flex-col gap-4 sm:gap-5 md:gap-6">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight m-0">
           ค้นพบสูตรอาหารใหม่ๆทุกวันกับ Recipia
         </h1>
 
-        <p className="text-lg md:text-xl text-white/80 m-0">
+        <p className="text-base sm:text-lg md:text-xl text-white/80 m-0">
           รวบรวมสูตรอาหารอร่อยจากทั่วโลก พร้อมคำแนะนำละเอียดทุกขั้นตอน
         </p>
         <div className="mt-3">
           <Link to="/recipe">
-            <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-semibold leading-none transition-all duration-200 hover:bg-gray-100 active:scale-95">
+            <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 rounded-full font-semibold leading-none text-sm sm:text-base transition-all duration-200 hover:bg-gray-100 active:scale-95">
               เริ่มค้นหาสูตร
               <ArrowRight
                 size={18}
