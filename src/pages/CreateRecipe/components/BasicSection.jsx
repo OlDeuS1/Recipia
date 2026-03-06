@@ -6,7 +6,7 @@ import CategoryDatalist from "./CategoryDatalist";
 export default function BasicSection({ formData, handleChange }) {
   return (
     <FormSection title="ข้อมูลพื้นฐาน">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <TextInput
           name="name"
           value={formData.name}
@@ -24,7 +24,7 @@ export default function BasicSection({ formData, handleChange }) {
         rows={4}
         label="คำอธิบาย"
       />
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <TextInput
           name="time"
           value={formData.time}

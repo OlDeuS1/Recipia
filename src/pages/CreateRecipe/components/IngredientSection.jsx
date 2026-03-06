@@ -34,7 +34,10 @@ export default function IngredientSection({ ingredients, setFormData }) {
       }
     >
       {ingredients.map((item, index) => (
-        <div key={index} className="flex gap-2 items-center">
+        <div
+          key={index}
+          className="flex flex-col sm:flex-row gap-2 sm:items-center"
+        >
           <div className="flex-1">
             <TextInput
               value={item}

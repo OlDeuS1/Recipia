@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function Topbar() {
   return (
-    <header className="sticky top-0 z-50 -mx-40 px-40 flex items-center justify-between gap-6 md:gap-10 py-3 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <header className="sticky top-0 z-50 -mx-4 md:-mx-10 lg:-mx-20 xl:-mx-40 px-4 md:px-10 lg:px-20 xl:px-40 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 md:gap-6 lg:gap-10 py-3 bg-white/80 backdrop-blur-md border-b border-gray-200">
       {/* LEFT */}
-      <div className="flex items-center gap-8 flex-1">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8 flex-1 w-full">
         <div className="flex items-center gap-3 text-2xl font-bold flex-shrink-0">
           <Link to="/">Recipia</Link>
         </div>
@@ -14,7 +14,7 @@ function Topbar() {
       </div>
 
       {/* RIGHT */}
-      <div className="flex items-center gap-4 flex-shrink-0">
+      <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4 mt-2 sm:mt-0 flex-shrink-0">
         <Link to="/create">
           <button className="flex items-center gap-2 bg-slate-900 text-white px-4 h-10 rounded-full hover:bg-slate-800 transition-all duration-200 shadow-md active:scale-95">
             <Plus size={18} strokeWidth={2.5} />

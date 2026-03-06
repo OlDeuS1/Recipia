@@ -61,7 +61,7 @@ export default function CreateRecipe() {
 
   return (
     <>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-6 sm:gap-10">
         <Breadcrumb />
         <SectionHead
           title="สร้างสูตรอาหารใหม่"
@@ -69,7 +69,7 @@ export default function CreateRecipe() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-14 space-y-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 space-y-10">
         <form
           onSubmit={handleSave}
           onReset={handleReset}
@@ -96,7 +96,7 @@ export default function CreateRecipe() {
 
           <NutritionSection formData={formData} setFormData={setFormData} />
 
-          <div className="flex gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4 pt-4">
             <button
               type="submit"
               className="px-8 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition shadow-md"

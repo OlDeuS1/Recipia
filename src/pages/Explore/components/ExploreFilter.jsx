@@ -71,7 +71,7 @@ export default function ExploreFilter({
   return (
     <div
       ref={filterRef}
-      className="flex flex-wrap items-center justify-between gap-4"
+      className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
     >
       <div className="flex flex-wrap items-center gap-3 flex-1">
         {/* Dropdown: หมวดหมู่ */}
@@ -160,7 +160,7 @@ export default function ExploreFilter({
         </div>
 
         {/* Search Input */}
-        <div className="relative w-72">
+        <div className="relative w-full sm:w-72">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
