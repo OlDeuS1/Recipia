@@ -42,10 +42,7 @@ export default function StepSection({ instructions, setFormData }) {
     >
       <div className="space-y-4">
         {instructions.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col sm:flex-row gap-4 items-start"
-          >
+          <div key={index} className="flex flex-row gap-4 items-start">
             {/* ตัวเลขลำดับขั้นตอน */}
             <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 text-gray-800 font-semibold rounded-full mt-2">
               {index + 1}

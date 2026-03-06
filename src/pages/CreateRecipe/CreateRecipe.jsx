@@ -96,7 +96,7 @@ export default function CreateRecipe() {
 
           <NutritionSection formData={formData} setFormData={setFormData} />
 
-          <div className="flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4 pt-4">
+          <div className="flex flex-row justify-end gap-3 sm:gap-4 pt-4">
             <button
               type="submit"
               className="px-8 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition shadow-md"
