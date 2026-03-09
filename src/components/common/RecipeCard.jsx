@@ -20,6 +20,8 @@ function RecipeCard({ item, fixed = false, footer }) {
             className="w-full h-full object-cover 
                        transition-transform duration-700 
                        group-hover:scale-110"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

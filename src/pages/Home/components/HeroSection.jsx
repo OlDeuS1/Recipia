@@ -11,6 +11,11 @@ function HeroSection() {
         src="/images/hero.avif"
         alt="Delicious food hero image"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        width={1920}
+        height={1080}
       />
       <div className="absolute inset-0 bg-black/50" />
 

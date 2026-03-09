@@ -11,7 +11,10 @@ function CatalogSection({ recipes }) {
         kicker="เมนูที่ได้รับความนิยมในสัปดาห์นี้"
         action={
           <Link to="/recipe">
-            <button className="group inline-flex items-center gap-1.5 font-semibold text-gray-900 leading-none transition-colors duration-200 hover:text-gray-700">
+            <button
+              type="button"
+              className="group inline-flex items-center gap-1.5 font-semibold text-gray-900 leading-none transition-colors duration-200 hover:text-gray-700 px-3 sm:px-4 min-h-[44px] rounded-full"
+            >
               <span className="flex items-center">ดูทั้งหมด</span>
               <ArrowRight
                 size={18}
