@@ -29,7 +29,7 @@ function RecipeCard({ item, fixed = false, footer }) {
         <div className="p-5 flex flex-col gap-3 flex-1">
           <span
             className="inline-flex px-3 py-1 rounded-full 
-                           bg-gray-100 text-gray-700 
+                           bg-gray-200 text-gray-700 
                            text-xs font-medium w-fit"
           >
             {item.category}

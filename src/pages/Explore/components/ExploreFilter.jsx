@@ -177,7 +177,7 @@ export default function ExploreFilter({
         {/* ปุ่มล้างค่า */}
         <button
           onClick={clearAll}
-          className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition"
+          className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition"
         >
           ล้างทั้งหมด
         </button>
