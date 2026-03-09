@@ -3,7 +3,7 @@ import { Star, Clock, Users } from "lucide-react";
 export default function RecipeHeader({ recipe }) {
   return (
     <div className="mt-10 mb-16">
-      <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium">
+      <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-200 text-gray-800 text-sm font-medium">
         {recipe.category}
       </span>
 
