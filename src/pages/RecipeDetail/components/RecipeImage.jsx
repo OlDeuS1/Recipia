@@ -4,7 +4,7 @@ export default function RecipeImage({ image, title }) {
       <img
         src={image}
         alt={title}
-        className="w-full max-w-4xl rounded-3xl shadow-xl object-cover"
+        className="w-full max-w-4xl max-h-[420px] rounded-3xl shadow-xl object-cover"
       />
     </div>
   );

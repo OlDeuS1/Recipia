@@ -1,440 +1,420 @@
 [
   {
     "id": "1",
-    "name": "Beef Wellington Bites",
-    "category": "Beef",
+    "name": "บีฟเวลลิงตันคำเล็ก (Beef Wellington Bites)",
+    "category": "เนื้อวัว",
     "rating": 4.8,
     "time": 45,
     "serving": 4,
     "nutrition": { "calories": 320, "protein": 22, "fat": 18, "carb": 15 },
     "instructions": [
-      "Sear beef tenderloin cubes in a hot pan until browned on all sides. Let cool.",
-      "Spread mushroom duxelles over squares of puff pastry.",
-      "Place a beef cube on each square, wrap tightly, and brush with egg wash.",
-      "Bake at 200°C for 15-20 minutes until golden brown."
+      "นำเนื้อสันในหั่นเต๋าลงไปจี่ในกระทะร้อนๆ ให้ผิวขึ้นสีน้ำตาลสวยทุกด้าน แล้วพักไว้ให้เย็นสนิท",
+      "ค่อยๆ ทาเห็ดดักเซลลงบนแผ่นพัฟเพสตรีที่เตรียมไว้",
+      "วางเนื้อลงไปตรงกลางแล้วห่อให้มิดชิด ทาไข่ไก่บางๆ ให้ทั่วเพื่อให้สีสวยตอนอบ",
+      "ส่งเข้าเตาอบที่ 200°C ประมาณ 15–20 นาที จนแป้งฟูเหลืองทองน่ากิน"
     ],
     "image": "/images/beef-wellington-bites.jpg",
     "ingredients": [
-      "500g Beef Tenderloin",
-      "1 pack Puff Pastry",
-      "200g Mushrooms",
-      "1 Egg",
-      "2 tbsp Mustard"
+      "เนื้อสันในเกรดดี 500 กรัม",
+      "แผ่นพัฟเพสตรีสำเร็จรูป 1 แพ็ค",
+      "เห็ดสับละเอียด (ดักเซล) 200 กรัม",
+      "ไข่ไก่ (สำหรับทาหน้า) 1 ฟอง",
+      "มัสตาร์ด 2 ช้อนโต๊ะ"
     ]
   },
   {
     "id": "2",
-    "name": "Wagyu Beef with Holy Basil & Chili",
-    "category": "Beef",
-    "rating": 4.9,
+    "name": "เนื้อวากิวผัดกะเพราพริกแห้ง",
+    "category": "เนื้อวัว",
+    "rating": 4.6,
     "time": 15,
     "serving": 2,
     "nutrition": { "calories": 420, "protein": 35, "fat": 28, "carb": 8 },
     "instructions": [
-      "Pound chili and garlic together. Sliced wagyu beef into bite-sized pieces.",
-      "Heat oil in a wok, fry chili and garlic until fragrant.",
-      "Add beef and stir-fry quickly on high heat.",
-      "Season with fish sauce and oyster sauce, then toss in holy basil and serve."
+      "ตำพริกกับกระเทียมพอหยาบๆ และหั่นเนื้อวากิวเป็นชิ้นพอดีคำเตรียมไว้",
+      "ตั้งกระทะไฟกลาง ใส่น้ำมันเล็กน้อย แล้วผัดพริกกระเทียมจนส่งกลิ่นหอมฟุ้ง",
+      "เร่งไฟแรงแล้วใส่เนื้อวากิวลงไป ผัดเร็วๆ ให้เนื้อพอสะดุ้งไฟ",
+      "เหยาะน้ำปลาและซอสหอยนางรม ปิดท้ายด้วยใบกะเพราเน้นๆ คลุกพอเข้ากันแล้วรีบยกเสิร์ฟเลย"
     ],
     "image": "/images/pad ka praw.jpg",
     "ingredients": [
-      "300g Wagyu Beef",
-      "5 Cloves Garlic",
-      "10 Thai Chilies",
-      "1 cup Holy Basil",
-      "1 tbsp Oyster Sauce"
+      "เนื้อวากิวหั่นชิ้น 300 กรัม",
+      "กระเทียมไทย 5 กลีบ",
+      "พริกขี้หนู (เพิ่มลดตามชอบ) 10 เม็ด",
+      "ใบกะเพราป่า 1 ถ้วย",
+      "ซอสหอยนางรม 1 ช้อนโต๊ะ"
     ]
   },
   {
     "id": "3",
-    "name": "Slow-Cooked Beef Stew",
-    "category": "Beef",
+    "name": "สตูว์เนื้อตุ๋นสูตรนุ่มละลาย",
+    "category": "เนื้อวัว",
     "rating": 4.7,
     "time": 180,
     "serving": 4,
     "nutrition": { "calories": 550, "protein": 42, "fat": 30, "carb": 25 },
     "instructions": [
-      "Coat beef chunks in flour and sear until brown.",
-      "Sauté onions, carrots, and celery in the same pot.",
-      "Add red wine, beef stock, and herbs. Return beef to the pot.",
-      "Simmer on low heat for 2.5 to 3 hours until beef is tender."
+      "นำชิ้นเนื้อไปคลุกแป้งบางๆ แล้วลงไปจี่ในกระทะให้ผิวตึงและเป็นสีน้ำตาล",
+      "ใช้กระทะใบเดิมผัดหอมใหญ่ แครอท และขึ้นฉ่ายจนเริ่มนิ่มและส่งกลิ่นหอม",
+      "เทไวน์แดง น้ำสต๊อก และสมุนไพรลงไป ตามด้วยเนื้อที่จี่ไว้",
+      "หรี่ไฟอ่อนแล้วเคี่ยวทิ้งไว้ประมาณ 2.5–3 ชั่วโมง จนเนื้อนุ่มแทบไม่ต้องเคี้ยว"
     ],
     "image": "/images/beef stew.jpg",
     "ingredients": [
-      "800g Beef Chuck",
-      "2 Carrots",
-      "2 Potatoes",
-      "500ml Beef Stock",
-      "200ml Red Wine"
+      "เนื้อส่วนสะโพกหรือใบพาย 800 กรัม",
+      "แครอทหั่นชิ้น 2 หัว",
+      "มันฝรั่ง 2 หัว",
+      "น้ำสต๊อกเนื้อเข้มข้น 500 มิลลิลิตร",
+      "ไวน์แดง 200 มิลลิลิตร"
     ]
   },
   {
     "id": "4",
-    "name": "Honey Garlic Roasted Chicken",
-    "category": "Chicken",
+    "name": "ไก่อบน้ำผึ้งกระเทียม",
+    "category": "ไก่",
     "rating": 4.7,
     "time": 40,
     "serving": 2,
     "nutrition": { "calories": 450, "protein": 38, "fat": 22, "carb": 25 },
     "instructions": [
-      "Season chicken thighs with salt and pepper.",
-      "In a bowl, mix honey, soy sauce, and garlic.",
-      "Sear chicken in a pan until skin is crispy, then add sauce.",
-      "Roast at 190°C until fully cooked and glaze is sticky."
+      "โรยเกลือและพริกไทยบนน่องไก่ให้ทั่วเพื่อดึงรสชาติ",
+      "ผสมน้ำผึ้ง ซอสถั่วเหลือง และกระเทียมสับเข้าด้วยกันในชาม",
+      "นำไก่ลงไปจี่ในกระทะจนหนังเริ่มกรอบและขึ้นสี แล้วค่อยเทซอสที่ปรุงไว้ลงไป",
+      "เอาเข้าเตาอบที่ 190°C ต่อจนไก้สุกนุ่มและซอสเริ่มงวดเคลือบตัวไก่จนเงาสวย"
     ],
     "image": "/images/honey-garlic-chicken-recipe-1.jpg",
     "ingredients": [
-      "4 Chicken Thighs",
-      "1/4 cup Honey",
-      "3 tbsp Soy Sauce",
-      "4 Cloves Garlic",
-      "1 tsp Paprika"
+      "น่องไก่ติดสะโพก 4 ชิ้น",
+      "น้ำผึ้งแท้ 1/4 ถ้วย",
+      "ซอสถั่วเหลือง 3 ช้อนโต๊ะ",
+      "กระเทียมสับละเอียด 4 กลีบ",
+      "ปาปริก้า 1 ช้อนชา"
     ]
   },
   {
     "id": "5",
-    "name": "Lemon Cream Sauce Chicken",
-    "category": "Chicken",
+    "name": "อกไก่ซอสครีมเลมอน",
+    "category": "ไก่",
     "rating": 4.5,
     "time": 25,
     "serving": 2,
     "nutrition": { "calories": 480, "protein": 34, "fat": 32, "carb": 12 },
     "instructions": [
-      "Dredge chicken breast in flour and pan-fry until golden.",
-      "In the same pan, melt butter and whisk in heavy cream and lemon juice.",
-      "Simmer until thickened, then return chicken to the pan.",
-      "Garnish with lemon slices and parsley."
+      "นำอกไก่ไปชุบแป้งบางๆ แล้วทอดในกระทะจนเป็นสีเหลืองทองน่ากิน",
+      "ใช้กระทะใบเดิมละลายเนย เติมเฮฟวีครีมและน้ำเลมอนลงไป คนให้เข้ากัน",
+      "เคี่ยวต่อจนซอสเริ่มข้นได้ที่ แล้วนำไก่กลับลงไปคลุกเคล้า",
+      "โรยผักชีฝรั่งสับและวางเลมอนฝานปิดท้ายก่อนยกขึ้นเสิร์ฟ"
     ],
     "image": "/images/Creamy-Lemon-Chicken-Feature.jpg",
     "ingredients": [
-      "2 Chicken Breasts",
-      "1/2 cup Heavy Cream",
-      "1 Lemon",
-      "2 tbsp Butter",
-      "1/4 cup Flour"
+      "อกไก่ลอกหนัง 2 ชิ้น",
+      "เฮฟวีครีม 1/2 ถ้วย",
+      "เลมอนคั้นสด 1 ลูก",
+      "เนยเค็ม 2 ช้อนโต๊ะ",
+      "แป้งสาลีอเนกประสงค์ 1/4 ถ้วย"
     ]
   },
   {
     "id": "6",
-    "name": "Chicken Tikka Masala",
-    "category": "Chicken",
+    "name": "ไก่ทิกก้ามาซาล่า (สไตล์อินเดีย)",
+    "category": "ไก่",
     "rating": 4.9,
     "time": 50,
     "serving": 3,
     "nutrition": { "calories": 510, "protein": 36, "fat": 24, "carb": 38 },
     "instructions": [
-      "Marinate chicken in yogurt and spices for 30 minutes.",
-      "Grill or sear chicken until charred.",
-      "Simmer tomato puree, cream, and garam masala in a pan.",
-      "Add chicken to the sauce and cook for 10 more minutes."
+      "คลุกไก่กับโยเกิร์ตและเครื่องเทศทิ้งไว้สัก 30 นาที ให้รสชาติซึมเข้าเนื้อ",
+      "นำไก่ไปย่างหรือจี่ในกระทะให้พอผิวเกรียมและมีกลิ่นหอม",
+      "เริ่มทำซอสโดยเคี่ยวมะเขือเทศปั่น ครีม และผงการามมาซาล่าจนเข้าเนื้อ",
+      "ใส่ไก่ที่ย่างไว้ลงไปในซอส เคี่ยวต่ออีก 10 นาทีให้รสชาติเข้มข้นถึงใจ"
     ],
     "image": "/images/chicken-tikka-masala.jpg",
     "ingredients": [
-      "500g Chicken",
-      "1 cup Yogurt",
-      "400ml Tomato Puree",
-      "1/2 cup Heavy Cream",
-      "2 tbsp Tikka Spices"
+      "เนื้อไก่หั่นชิ้น 500 กรัม",
+      "โยเกิร์ตรสธรรมชาติ 1 ถ้วย",
+      "มะเขือเทศปั่นละเอียด 400 มิลลิลิตร",
+      "เฮฟวีครีม 1/2 ถ้วย",
+      "ผงเครื่องเทศทิกก้า 2 ช้อนโต๊ะ"
     ]
   },
   {
     "id": "7",
-    "name": "Garlic Butter Shrimp Scampi",
-    "category": "Seafood",
+    "name": "พาสต้ากุ้งกระเทียมเนย",
+    "category": "อาหารทะเล",
     "rating": 4.9,
     "time": 15,
     "serving": 2,
     "nutrition": { "calories": 520, "protein": 28, "fat": 30, "carb": 42 },
     "instructions": [
-      "Boil linguine until al dente.",
-      "Sauté shrimp in butter and olive oil until pink.",
-      "Add garlic and lemon juice, toss with pasta.",
-      "Finish with fresh parsley and red pepper flakes."
+      "ต้มเส้นลิงกวีนีในน้ำเดือดจนสุกแบบกรุบนิดๆ (Al Dente)",
+      "ผัดกุ้งกับเนยและน้ำมันมะกอกจนกุ้งเด้งและเปลี่ยนเป็นสีชมพูสวย",
+      "ใส่กระเทียมสับและบีบเลมอนลงไป แล้วตามด้วยเส้นพาสต้าลงไปคลุก",
+      "โรยผักชีฝรั่งสับและพริกป่นเพิ่มความจัดจ้านนิดๆ ก่อนจัดจาน"
     ],
     "image": "/images/Garlic-Butter-Shrimp-IMAGE-15.jpg",
     "ingredients": [
-      "1 lb Shrimp",
-      "250g Linguine",
-      "4 tbsp Butter",
-      "3 Cloves Garlic",
-      "1 Lemon"
+      "กุ้งสดปอกเปลือก 1 ปอนด์",
+      "เส้นลิงกวีนี 250 กรัม",
+      "เนยสด 4 ช้อนโต๊ะ",
+      "กระเทียมสับ 3 กลีบ",
+      "เลมอน 1 ลูก"
     ]
   },
   {
     "id": "8",
-    "name": "Steamed Sea Bass with Lime",
-    "category": "Seafood",
+    "name": "ปลากะพงนึ่งมะนาวรสเด็ด",
+    "category": "อาหารทะเล",
     "rating": 4.8,
     "time": 25,
     "serving": 2,
     "nutrition": { "calories": 280, "protein": 38, "fat": 10, "carb": 12 },
     "instructions": [
-      "Clean sea bass and place on a steaming plate.",
-      "Steam for 15-20 minutes until cooked through.",
-      "Mix lime juice, fish sauce, garlic, and chili in a bowl.",
-      "Pour dressing over the hot fish and garnish with cilantro."
+      "ล้างปลากะพงให้สะอาด บั้งเนื้อเล็กน้อยแล้วเตรียมลงจานนึ่ง",
+      "นึ่งปลาด้วยไฟแรงประมาณ 15–20 นาทีจนเนื้อขาวสุก",
+      "ปรุงน้ำราดโดยผสมน้ำมะนาว น้ำปลา กระเทียมสับ และพริกให้แซ่บตามชอบ",
+      "ราดน้ำปรุงลงบนตัวปลาร้อนๆ โรยผักชีเพิ่มความหอมพร้อมเสิร์ฟ"
     ],
     "image": "/images/sea bass.jpg",
     "ingredients": [
-      "1 Whole Sea Bass",
-      "4 tbsp Lime Juice",
-      "3 tbsp Fish Sauce",
-      "5 Chilies",
-      "4 Cloves Garlic"
+      "ปลากะพงไซส์กลาง 1 ตัว",
+      "น้ำมะนาวคั้นสด 4 ช้อนโต๊ะ",
+      "น้ำปลาอย่างดี 3 ช้อนโต๊ะ",
+      "พริกขี้หนูสับ 5 เม็ด",
+      "กระเทียมสับละเอียด 4 กลีบ"
     ]
   },
   {
     "id": "9",
-    "name": "Seafood Paella",
-    "category": "Seafood",
+    "name": "ข้าวปาเยียซีฟู้ดสไตล์สเปน",
+    "category": "อาหารทะเล",
     "rating": 4.7,
     "time": 60,
     "serving": 4,
     "nutrition": { "calories": 590, "protein": 32, "fat": 15, "carb": 78 },
     "instructions": [
-      "Sauté onions and peppers in a paella pan.",
-      "Add rice and saffron stock, simmer without stirring.",
-      "Arrange mussels, shrimp, and squid on top of the rice.",
-      "Cook until liquid is absorbed and rice is tender."
+      "ผัดหอมใหญ่กับพริกหวานในกระทะก้นแบนจนเริ่มนิ่ม",
+      "ใส่ข้าวและน้ำสต๊อกที่ผสมหญ้าฝรั่นลงไป ปล่อยให้เคี่ยวไปเรื่อยๆ ห้ามคนเด็ดขาด",
+      "วางเรียงหอยแมลงภู่ กุ้ง และปลาหมึกให้สวยงามบนหน้าข้าว",
+      "เคี่ยวต่อจนข้าวดูดน้ำจนแห้งสนิทและนุ่มหอมดี"
     ],
     "image": "/images/Paella_RECIPE_021523_47427.webp",
     "ingredients": [
-      "2 cups Bomba Rice",
-      "500ml Saffron Stock",
-      "200g Shrimp",
-      "200g Mussels",
-      "150g Squid"
+      "ข้าวบอมบ้า (หรือข้าวเมล็ดสั้น) 2 ถ้วย",
+      "น้ำสต๊อกผสมหญ้าฝรั่น 500 มิลลิลิตร",
+      "กุ้งสด 200 กรัม",
+      "หอยแมลงภู่ 200 กรัม",
+      "ปลาหมึกหั่นชิ้น 150 กรัม"
     ]
   },
   {
     "id": "10",
-    "name": "Classic Caesar Salad",
-    "category": "Vegetarian",
-    "rating": 4.6,
+    "name": "ซีซาร์สลัดสูตรคลาสสิก",
+    "category": "มังสวิรัติ",
+    "rating": 5,
     "time": 15,
     "serving": 2,
-    "nutrition": {
-      "calories": 310,
-      "protein": 8,
-      "fat": 24,
-      "carb": 18
-    },
+    "nutrition": { "calories": 310, "protein": 8, "fat": 24, "carb": 18 },
     "instructions": [
-      "Tear Romaine lettuce into bite-sized pieces and place in a large bowl.",
-      "In a small bowl, whisk together garlic, mustard, lemon juice, and olive oil to make the dressing.",
-      "Toss the lettuce with the dressing until every leaf is well coated.",
-      "Top with crunchy croutons and a generous amount of shaved Parmesan cheese before serving."
+      "ล้างผักคอสให้สะอาด ฉีกเป็นชิ้นพอดีคำแล้วใส่ชามใบใหญ่รอไว้",
+      "ปรุงน้ำสลัดโดยผสมกระเทียม มัสตาร์ด เลมอน และน้ำมันมะกอกจนเข้าเป็นเนื้อเดียวกัน",
+      "ราดน้ำสลัดลงไป แล้วคลุกเคล้าเบาๆ ให้เคลือบใบผักทุกใบ",
+      "ก่อนเสิร์ฟโรยขนมปังกรอบและชีสพาร์เมซานขูดแผ่นให้ทั่ว"
     ],
     "image": "/images/229063-Classic-Restaurant-Caesar-Salad-ddmfs-4x3-231-89bafa5e54dd4a8c933cf2a5f9f12a6f.jpg",
     "ingredients": [
-      "1 head Romaine Lettuce",
-      "1/2 cup Croutons",
-      "1/4 cup Shaved Parmesan",
-      "2 tbsp Olive Oil",
-      "1 tsp Dijon Mustard",
-      "1/2 Lemon (juiced)",
-      "1 Clove Garlic (minced)"
+      "ผักคอสสด 1 หัว",
+      "ขนมปังกรอบ (Croutons) 1/2 ถ้วย",
+      "ชีสพาร์เมซานสไลด์ 1/4 ถ้วย",
+      "น้ำมันมะกอก Extra Virgin 2 ช้อนโต๊ะ",
+      "มัสตาร์ดดิฌง 1 ช้อนชา",
+      "น้ำเลมอน 1/2 ลูก",
+      "กระเทียมสับละเอียด 1 กลีบ"
     ]
   },
   {
     "id": "11",
-    "name": "Crispy Tofu Larb",
-    "category": "Vegetarian",
+    "name": "ลาบเต้าหู้กรอบรสแซ่บ",
+    "category": "มังสวิรัติ",
     "rating": 4.4,
     "time": 20,
     "serving": 2,
     "nutrition": { "calories": 240, "protein": 18, "fat": 12, "carb": 16 },
     "instructions": [
-      "Dice tofu and deep fry until crispy. Drain oil.",
-      "Mix lime juice, soy sauce, chili flakes, and toasted rice powder.",
-      "Toss crispy tofu with the dressing, shallots, and mint.",
-      "Serve with fresh cabbage or sticky rice."
+      "หั่นเต้าหู้เป็นชิ้นเล็กๆ แล้วทอดจนเหลืองกรอบ พักให้สะเด็ดน้ำมัน",
+      "ผสมน้ำปรุงรสด้วยมะนาว ซอสถั่วเหลือง พริกป่น และข้าวคั่วหอมๆ",
+      "นำเต้าหู้กรอบลงไปคลุกกับน้ำปรุง ตามด้วยหอมแดงและสะระแหน่",
+      "จัดใส่จานคู่กับผักสดๆ หรือข้าวเหนียวร้อนๆ ก็เข้ากัน"
     ],
     "image": "/images/thai-tofu-larb.webp",
     "ingredients": [
-      "1 block Firm Tofu",
-      "2 tbsp Toasted Rice Powder",
-      "2 tbsp Lime Juice",
-      "Shallots",
-      "Mint Leaves"
+      "เต้าหู้เนื้อแน่น 1 ก้อน",
+      "ข้าวคั่วใหม่ๆ 2 ช้อนโต๊ะ",
+      "น้ำมะนาว 2 ช้อนโต๊ะ",
+      "หอมแดงซอย",
+      "ใบสะระแหน่เด็ด"
     ]
   },
   {
     "id": "12",
-    "name": "Roasted Cauliflower Steak",
-    "category": "Vegetarian",
+    "name": "กะหล่ำดอกสเต็กอบสมุนไพร",
+    "category": "มังสวิรัติ",
     "rating": 4.3,
     "time": 30,
     "serving": 2,
     "nutrition": { "calories": 180, "protein": 6, "fat": 14, "carb": 12 },
     "instructions": [
-      "Cut cauliflower into 1-inch thick steaks.",
-      "Brush with olive oil, salt, pepper, and garlic powder.",
-      "Roast at 200°C for 20 minutes until edges are charred.",
-      "Serve with chimichurri sauce or tahini dressing."
+      "หั่นกะหล่ำดอกตามยาวให้หนาประมาณ 1 นิ้ว ดูคล้ายแผ่นสเต็ก",
+      "ทาด้วยน้ำมันมะกอก โรยเกลือ พริกไทย และผงกระเทียมให้ทั่วทั้งสองด้าน",
+      "นำเข้าเตาอบที่ 200°C ประมาณ 20 นาที จนขอบเริ่มเกรียมสวยและนุ่มกำลังดี",
+      "เสิร์ฟพร้อมซอสชิมิชูรีหรือดิปงาขาว (ทาฮินี) เพิ่มรสชาติ"
     ],
     "image": "/images/239042-roasted-cauliflower-steaks-beauty-3x4-0135064414743-2a3f91d8961c406685324b432d6f95a0.jpg",
     "ingredients": [
-      "1 Large Cauliflower",
-      "3 tbsp Olive Oil",
-      "1 tsp Garlic Powder",
-      "Salt & Pepper"
+      "กะหล่ำดอกหัวใหญ่ 1 หัว",
+      "น้ำมันมะกอก 3 ช้อนโต๊ะ",
+      "ผงกระเทียม 1 ช้อนชา",
+      "เกลือและพริกไทยดำ"
     ]
   },
   {
     "id": "13",
-    "name": "Basque Burnt Cheesecake",
-    "category": "Dessert",
+    "name": "ชีสเค้กหน้าไหม้ (Basque Cheesecake)",
+    "category": "ของหวาน",
     "rating": 5.0,
     "time": 60,
     "serving": 8,
     "nutrition": { "calories": 410, "protein": 6, "fat": 32, "carb": 24 },
     "instructions": [
-      "Mix cream cheese and sugar until smooth.",
-      "Add eggs, heavy cream, and vanilla. Mix well.",
-      "Fold in flour. Pour into a lined baking tin.",
-      "Bake at 220°C for 25-30 minutes until top is dark brown."
+      "ตีครีมชีสกับน้ำตาลจนเนื้อเนียนกริบไม่เป็นเม็ด",
+      "ทยอยใส่ไข่ เฮฟวีครีม และกลิ่นวานิลลาลงไป ตีต่อให้เข้ากันดี",
+      "ร่อนแป้งตามลงไปแล้วตะล่อมเบาๆ เทใส่พิมพ์ที่รองด้วยกระดาษไขไว้",
+      "อบไฟแรง 220°C ประมาณ 25–30 นาที จนหน้าขนมเป็นสีน้ำตาลไหม้สวยเป็นเอกลักษณ์"
     ],
     "image": "/images/vegan-burnt-basque-cheesecake.jpg",
     "ingredients": [
-      "500g Cream Cheese",
-      "150g Sugar",
-      "3 Eggs",
-      "250ml Heavy Cream",
-      "1 tbsp Flour"
+      "ครีมชีส (อุณหภูมิห้อง) 500 กรัม",
+      "น้ำตาลทราย 150 กรัม",
+      "ไข่ไก่ 3 ฟอง",
+      "เฮฟวีครีม 250 มิลลิลิตร",
+      "แป้งสาลี 1 ช้อนโต๊ะ"
     ]
   },
   {
     "id": "14",
-    "name": "Butterfly Pea Mango Sticky Rice",
-    "category": "Dessert",
+    "name": "ข้าวเหนียวมะม่วงอัญชัน",
+    "category": "ของหวาน",
     "rating": 4.9,
     "time": 45,
     "serving": 2,
     "nutrition": { "calories": 480, "protein": 5, "fat": 15, "carb": 85 },
     "instructions": [
-      "Soak sticky rice in butterfly pea water for 3 hours, then steam.",
-      "Mix coconut milk, sugar, and salt over low heat.",
-      "Fold coconut milk into cooked rice and let sit for 20 minutes.",
-      "Serve with fresh sliced mango and toasted mung beans."
+      "แช่ข้าวเหนียวในน้ำดอกอัญชันให้สีสวย แล้วนำไปนึ่งจนสุกนิ่ม",
+      "เคี่ยวกะทิ น้ำตาล และเกลือด้วยไฟอ่อนให้เข้ากันจนละลาย",
+      "มูนข้าวเหนียวโดยราดน้ำกะทิลงไป แล้วปิดฝาพักไว้ 20 นาทีให้ซึมเข้าเมล็ดข้าว",
+      "จัดเสิร์ฟพร้อมมะม่วงสุกหวานๆ และโรยถั่วทองคั่วเพิ่มความกรุบกรอบ"
     ],
     "image": "/images/Authentic-Butterfly-Pea-Mango-Sticky-Rice.webp",
     "ingredients": [
-      "1 cup Sticky Rice",
-      "1 Ripe Mango",
-      "1/2 cup Coconut Milk",
-      "Butterfly Pea Flowers",
-      "1/4 cup Sugar"
+      "ข้าวเหนียวเขี้ยวงู 1 ถ้วย",
+      "มะม่วงน้ำดอกไม้สุก 1 ลูก",
+      "หัวกะทิเข้มข้น 1/2 ถ้วย",
+      "ดอกอัญชันสดหรือแห้ง",
+      "น้ำตาลทราย 1/4 ถ้วย"
     ]
   },
   {
     "id": "15",
-    "name": "Dark Chocolate Lava Cake",
-    "category": "Dessert",
+    "name": "ช็อกโกแลตลาวาเค้ก",
+    "category": "ของหวาน",
     "rating": 4.8,
     "time": 20,
     "serving": 2,
     "nutrition": { "calories": 350, "protein": 4, "fat": 22, "carb": 30 },
     "instructions": [
-      "Melt dark chocolate and butter together.",
-      "Whisk egg and sugar, then combine with chocolate mixture.",
-      "Fold in flour and pour into greased ramekins.",
-      "Bake at 200°C for 10-12 minutes. Serve warm."
+      "ละลายดาร์กช็อกโกแลตกับเนยด้วยกันจนเนื้อเนียนเงา",
+      "ตีไข่กับน้ำตาลจนฟูเล็กน้อย แล้วค่อยๆ นำไปผสมกับช็อกโกแลตที่ละลายไว้",
+      "ตะล่อมแป้งลงไปผสมให้เข้ากัน แล้วเทใส่พิมพ์ที่ทาเนยเตรียมไว้",
+      "อบที่ 200°C แค่ 10–12 นาที เพื่อให้ข้างในยังไหลเป็นลาวาเยิ้มๆ"
     ],
     "image": "/images/Chocolate-Lava-Cake-Recipe.jpg",
     "ingredients": [
-      "100g Dark Chocolate",
-      "50g Butter",
-      "1 Egg",
-      "2 tbsp Sugar",
-      "2 tbsp Flour"
+      "ดาร์กช็อกโกแลต 100 กรัม",
+      "เนยเค็ม 50 กรัม",
+      "ไข่ไก่ 1 ฟอง",
+      "น้ำตาลทราย 2 ช้อนโต๊ะ",
+      "แป้งสาลีอเนกประสงค์ 2 ช้อนโต๊ะ"
     ]
   },
   {
     "id": "54017",
-    "name": "Bruschetta with Tomato & Basil",
-    "category": "Appetizer",
+    "name": "บรัสเชตตามะเขือเทศโหระพา",
+    "category": "อาหารเรียกน้ำย่อย",
     "rating": 4.7,
     "time": 15,
     "serving": 4,
-    "nutrition": {
-      "calories": 150,
-      "protein": 4,
-      "fat": 7,
-      "carb": 20
-    },
+    "nutrition": { "calories": 150, "protein": 4, "fat": 7, "carb": 20 },
     "instructions": [
-      "Slice baguette and toast until golden brown. Rub each slice with a garlic clove.",
-      "Toss diced tomatoes with olive oil, balsamic glaze, and chopped fresh basil.",
-      "Season with salt and pepper to taste.",
-      "Spoon the tomato mixture onto the toasted bread and serve immediately."
+      "หั่นขนมปังบาแก็ตเป็นแผ่น อบจนเหลืองกรอบ แล้วใช้กลีบกระเทียมถูบนหน้าขนมปังให้หอม",
+      "คลุกมะเขือเทศเต๋ากับน้ำมันมะกอก บัลซามิก และโหระพาสับให้เข้ากัน",
+      "ปรุงรสด้วยเกลือและพริกไทยตามชอบใจ",
+      "ตักมะเขือเทศวางบนขนมปังกรอบๆ แล้วรีบเสิร์ฟขณะที่ยังกรอบอยู่"
     ],
     "image": "/images/tomato-and-basil-bruschetta-75254-1.jpeg",
     "ingredients": [
-      "1 Baguette",
-      "3 Roma Tomatoes",
-      "1 bunch Fresh Basil",
-      "2 tbsp Olive Oil",
-      "1 tbsp Balsamic Glaze",
-      "1 Clove Garlic"
+      "ขนมปังบาแก็ต 1 แท่ง",
+      "มะเขือเทศโรม่า 3 ลูก",
+      "ใบโหระพาสด 1 กำเล็ก",
+      "น้ำมันมะกอก 2 ช้อนโต๊ะ",
+      "บัลซามิกกลาซ 1 ช้อนโต๊ะ",
+      "กระเทียม 1 กลีบ"
     ]
   },
   {
     "id": "54018",
-    "name": "Crispy Calamari with Marinara Sauce",
-    "category": "Appetizer",
+    "name": "หมึกชุบแป้งทอด (Calamari) กับซอสมารินารา",
+    "category": "อาหารเรียกน้ำย่อย",
     "rating": 4.8,
     "time": 25,
     "serving": 3,
-    "nutrition": {
-      "calories": 380,
-      "protein": 18,
-      "fat": 22,
-      "carb": 28
-    },
+    "nutrition": { "calories": 380, "protein": 18, "fat": 22, "carb": 28 },
     "instructions": [
-      "Clean and slice squid into rings. Pat dry with paper towels.",
-      "Dredge squid rings in a mixture of flour, salt, and paprika.",
-      "Deep fry in hot oil until golden and crispy, about 2-3 minutes.",
-      "Serve hot with marinara sauce and lemon wedges on the side."
+      "หั่นปลาหมึกเป็นวงๆ แล้วซับน้ำให้แห้งสนิท (เพื่อไม่ให้น้ำมันกระเด็นนะ)",
+      "นำไปคลุกกับแป้งสาลีที่ผสมเกลือและปาปริก้าไว้ให้ทั่ว",
+      "ลงทอดในน้ำมันร้อนจัดจนเหลืองทองกรอบ ประมาณ 2–3 นาทีพอ",
+      "เสิร์ฟร้อนๆ พร้อมซอสมารินาราเข้มข้นและเลมอนสักชิ้น"
     ],
     "image": "/images/pile-of-fried-calamari.jpg",
     "ingredients": [
-      "500g Squid",
-      "1 cup All-purpose Flour",
-      "1/2 cup Marinara Sauce",
-      "1 tsp Paprika",
-      "1 Lemon",
-      "Oil for frying"
+      "ปลาหมึกสด 500 กรัม",
+      "แป้งสาลีอเนกประสงค์ 1 ถ้วย",
+      "ซอสมารินารา 1/2 ถ้วย",
+      "ปาปริก้า 1 ช้อนชา",
+      "เลมอน 1 ลูก",
+      "น้ำมันสำหรับทอด"
     ]
   },
   {
     "id": "54019",
-    "name": "Spinach Artichoke Dip",
-    "category": "Appetizer",
+    "name": "ผักโขมอบชีสใส่อาร์ติโชก",
+    "category": "อาหารเรียกน้ำย่อย",
     "rating": 4.9,
     "time": 30,
     "serving": 6,
-    "nutrition": {
-      "calories": 290,
-      "protein": 9,
-      "fat": 24,
-      "carb": 12
-    },
+    "nutrition": { "calories": 290, "protein": 9, "fat": 24, "carb": 12 },
     "instructions": [
-      "Combine cream cheese, sour cream, and mayonnaise in a bowl until smooth.",
-      "Stir in chopped spinach, artichoke hearts, and half of the parmesan and mozzarella.",
-      "Transfer to a baking dish and top with remaining cheese.",
-      "Bake at 190°C for 20-25 minutes until bubbly and golden on top."
+      "ตีครีมชีส ซาวร์ครีม และมายองเนสให้เนียนนุ่มเข้ากัน",
+      "ผสมผักโขมสับ อาร์ติโชก และชีสครึ่งหนึ่งลงไป คนให้เข้าเนื้อ",
+      "ตักใส่ถาดอบแล้วโรยหน้าด้วยชีสที่เหลือแบบจัดเต็ม",
+      "อบที่ 190°C จนชีสเริ่มเดือดปุดๆ และเปลี่ยนเป็นสีทองสวย"
     ],
     "image": "/images/spinach-artichoke-dip-1-2.webp",
     "ingredients": [
-      "250g Cream Cheese",
-      "200g Frozen Spinach (thawed and squeezed)",
-      "1 can Artichoke Hearts (chopped)",
-      "1/2 cup Mozzarella Cheese",
-      "1/2 cup Parmesan Cheese",
-      "1/4 cup Mayonnaise"
+      "ครีมชีส 250 กรัม",
+      "ผักโขมสับ (บีบน้ำออกให้แห้ง) 200 กรัม",
+      "อาร์ติโชกสับ 1 กระป๋อง",
+      "ชีสมอซซาเรลลา 1/2 ถ้วย",
+      "ชีสพาร์เมซาน 1/2 ถ้วย",
+      "มายองเนส 1/4 ถ้วย"
     ]
   }
 ]
