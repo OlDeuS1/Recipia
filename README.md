@@ -62,17 +62,6 @@
 
 ---
 
-## 📜 คำสั่งที่ใช้ได้
-
-| คำสั่ง | คำอธิบาย |
-|---|---|
-| `npm run dev` | รัน development server พร้อม hot reload |
-| `npm run build` | Build สำหรับ production ไปที่โฟลเดอร์ `dist/` |
-| `npm run preview` | Preview production build ที่ build แล้ว |
-| `npm run lint` | ตรวจสอบโค้ดด้วย ESLint |
-
----
-
 ## 📁 โครงสร้างโปรเจกต์
 
 ```
@@ -102,7 +91,3 @@ Recipia/
 ```
 
 ---
-
-## 📄 License
-
-โปรเจกต์นี้อยู่ภายใต้ [MIT License](LICENSE)
